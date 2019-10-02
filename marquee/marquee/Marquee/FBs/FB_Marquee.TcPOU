@@ -61,9 +61,34 @@ IF bStart THEN
 				pLamp01^ := TRUE;
 				TON1(IN:=TRUE, PT:= T#1S, Q=> , ET=> );
 				IF TON1.Q THEN 
-					
+					pLamp01^ := FALSE;
+					TON1(IN:=FALSE);
+					iStep:= 10;
 				END_IF
-					
+			10:
+				pLamp02^ := TRUE;
+				TON2(IN:=TRUE, PT:=T#1S, Q=> , ET=> );
+				IF TON2.Q THEN 
+					pLamp02^ := FALSE;
+					TON2(IN:=FALSE);
+					iStep := 20;				
+				END_IF
+			20:
+				pLamp03^ := TRUE;
+				TON3(IN:=TRUE, PT:=T#1S, Q=> , ET=> );
+				IF TON3.Q THEN 
+					pLamp03^ := FALSE;
+					TON3(IN:=FALSE);
+					iStep := 30;
+				END_IF
+			30:
+				pLamp04^ := TRUE;
+				TON4(IN:=TRUE, PT:=T#1S, Q=> , ET=> );
+				IF	TON4.Q THEN 
+					pLamp04^ := FALSE;
+					TON4(IN:=FALSE);
+					iStep := 0;
+				END_IF
 	END_CASE
 END_IF
 
@@ -93,8 +118,21 @@ END_IF
       <LineId Id="32" Count="0" />
       <LineId Id="87" Count="1" />
       <LineId Id="92" Count="1" />
-      <LineId Id="95" Count="3" />
+      <LineId Id="95" Count="2" />
+      <LineId Id="103" Count="1" />
+      <LineId Id="98" Count="0" />
       <LineId Id="94" Count="0" />
+      <LineId Id="105" Count="3" />
+      <LineId Id="110" Count="1" />
+      <LineId Id="109" Count="0" />
+      <LineId Id="113" Count="2" />
+      <LineId Id="112" Count="0" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="118" Count="1" />
+      <LineId Id="117" Count="0" />
+      <LineId Id="120" Count="4" />
+      <LineId Id="126" Count="1" />
+      <LineId Id="125" Count="0" />
       <LineId Id="91" Count="0" />
       <LineId Id="89" Count="0" />
       <LineId Id="65" Count="0" />

@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{767A206F-64DC-4FFD-9A2F-2E76C97CFD9F}" Name="Marquee" PrjFilePath="Marquee\Marquee.plcproj" TmcFilePath="Marquee\Marquee.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Marquee\Marquee.tmc">
 					<Name>Marquee Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<TaskPouOids>
