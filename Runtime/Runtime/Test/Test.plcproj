@@ -2,26 +2,18 @@
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{767a206f-64dc-4ffd-9a2f-2e76c97cfd9f}</ProjectGuid>
+    <ProjectGuid>{81095d94-17b5-44db-94f6-1b77dedf35fc}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
-    <Name>Marquee</Name>
+    <Name>Test</Name>
     <ProgramVersion>3.1.4022.4</ProgramVersion>
-    <Application>{12628c2b-a761-4cd5-b43b-57e193f76fe1}</Application>
-    <TypeSystem>{b3c3f491-0f93-43ac-82e7-aeeef2b6ffb1}</TypeSystem>
-    <Implicit_Task_Info>{914ac596-22af-4bc5-9db2-81aa12202331}</Implicit_Task_Info>
-    <Implicit_KindOfTask>{a4f209d0-aba8-48ba-893b-ea37db605f1a}</Implicit_KindOfTask>
-    <Implicit_Jitter_Distribution>{e0302b29-7e0d-4b89-92f2-f3b9ddaf3c0b}</Implicit_Jitter_Distribution>
-    <LibraryReferences>{8a9dec64-51a8-4228-9044-0e9860ad7a3a}</LibraryReferences>
-    <CombineIds>false</CombineIds>
-    <Released>true</Released>
-    <Company>HiJack Automation</Company>
-    <Title>Marquee</Title>
-    <ProjectVersion>0.1</ProjectVersion>
+    <Application>{e7ba482b-d35c-49a9-b804-180400c52683}</Application>
+    <TypeSystem>{e58b5a20-3e31-459b-8f2a-ac3098c298e1}</TypeSystem>
+    <Implicit_Task_Info>{ea7e9fa9-eef1-415f-bcd2-cec1eb213c64}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{c6fb5e95-651e-4313-937e-98614c47bc5e}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{1c31b036-d63c-46eb-8201-5a3871ba77d6}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{d77b1d9c-14da-42b1-aafa-686045096ace}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="FBs\FB_Marquee.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
@@ -32,7 +24,6 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
-    <Folder Include="FBs" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
@@ -50,16 +41,11 @@
       <Namespace>Tc3_Module</Namespace>
     </PlaceholderReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Marquee.tmc">
-      <SubType>Content</SubType>
-    </None>
-  </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-        <Data>
-          <o xml:space="preserve" t="OptionKey">
+  <Data>
+    <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
@@ -80,13 +66,13 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-        </Data>
-        <TypeList>
-          <Type n="Hashtable">System.Collections.Hashtable</Type>
-          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-          <Type n="String">System.String</Type>
-        </TypeList>
-      </XmlArchive>
+  </Data>
+  <TypeList>
+    <Type n="Hashtable">System.Collections.Hashtable</Type>
+    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+    <Type n="String">System.String</Type>
+  </TypeList>
+</XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>
