@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <GVL Name="GVL_General" Id="{be71a7b4-7ff8-4846-af8b-dba340512ccd}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	// ==============hardware IO======================
+	bLamp01			AT %Q* :BOOL;
+	bLamp02			AT %Q* :BOOL;
+	bLamp03			AT %Q* :BOOL;
+	bLamp04			AT %Q* :BOOL;
+	
+	//bStart			AT %I* :BOOL;
+	//bStop				AT %I*	:BOOL;
+	//=====================UI Button=============================
+	bStartBtn			:BOOL;
+	bStopBtn			:BOOL;
+	bPauseBtn			:BOOL;
+	//=====================UI Button=============================
+	
+	
+	
+	
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

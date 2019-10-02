@@ -13,6 +13,31 @@
 				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
 					<Name>Test Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="2">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>GVL_General.bLamp01</Name>
+							<Comment>
+								<![CDATA[ ==============hardware IO======================]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_General.bLamp02</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_General.bLamp03</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_General.bLamp04</Name>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+					</TaskPouOids>
 				</Instance>
 			</Project>
 		</Plc>
