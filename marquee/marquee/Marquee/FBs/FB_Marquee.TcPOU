@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <POU Name="FB_Marquee" Id="{ffdf7d82-b4ab-4511-9b34-b7a7860a4a5b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Marquee
+VAR_INPUT
+	pLamp01			:POINTER TO BOOL;
+	pLamp02			:POINTER TO BOOL;
+	pLamp03			:POINTER TO BOOL;
+	pLamp04			:POINTER TO BOOL;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	TON1		:TON;
+	TON2		:TON;
+	TON3		:TON;
+	TON4		:TON;
+	rTrig		:F_TRIG;
+	iStep		:INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Blinking" Id="{d75e3a2d-b19b-4822-b107-2b2360cead3b}">
+      <Declaration><![CDATA[METHOD Blinking : BOOL
+VAR_INPUT
+	bStart			:BOOL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[(*IF bStart THEN
+	 
+	TON1(IN:=TRUE, PT:= T#1S, Q=> , ET=> );
+	pLamp01^ := TRUE;
+	
+	IF	TON1.Q THEN 
+		pLamp01^ := FALSE;
+		TON2(IN:=TON1.Q, PT:= T#1S, Q=> , ET=> );
+		pLamp02^ := TRUE;
+		IF TON2.Q THEN 
+			pLamp02^ := FALSE;
+			TON3(IN:=TON2.Q, PT:= T#1S, Q=> , ET=> );
+			pLamp03^ := TRUE;
+			IF TON3.Q THEN 
+				pLamp03^ := FALSE;
+				TON4(IN:=TON3.Q, PT:= T#1S, Q=> , ET=> );
+				pLamp04^ := TRUE;
+				IF TON4.Q THEN 
+					pLamp04^ := FALSE;
+					TON1(IN:=FALSE);
+					
+				END_IF
+			END_IF
+		END_IF
+	END_IF *)
+	
+IF bStart THEN 
+	CASE iStep OF
+			0:
+				pLamp01^ := TRUE;
+				TON1(IN:=TRUE, PT:= T#1S, Q=> , ET=> );
+				IF TON1.Q THEN 
+					
+				END_IF
+					
+	END_CASE
+END_IF
+
+
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Marquee">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Marquee.Blinking">
+      <LineId Id="5" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="9" Count="1" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="15" Count="2" />
+      <LineId Id="19" Count="3" />
+      <LineId Id="25" Count="3" />
+      <LineId Id="30" Count="1" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="87" Count="1" />
+      <LineId Id="92" Count="1" />
+      <LineId Id="95" Count="3" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="91" Count="0" />
+      <LineId Id="89" Count="0" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="86" Count="0" />
+      <LineId Id="85" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

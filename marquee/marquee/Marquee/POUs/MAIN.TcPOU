@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <POU Name="MAIN" Id="{fa671d83-edd0-492d-886f-c7d702fe85de}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	fbMarquee		:FB_Marquee;
+	bLamp01,bLamp02,bLamp03,bLamp04		:BOOL;
+	bBlinking			:BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbMarquee(pLamp01:= ADR(bLamp01) , pLamp02:=ADR(bLamp02), pLamp03:=ADR(bLamp03) , pLamp04:= ADR(bLamp04));
+fbMarquee.Blinking(bStart :=bBlinking );
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
