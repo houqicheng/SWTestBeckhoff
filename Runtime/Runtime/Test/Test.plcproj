@@ -24,6 +24,9 @@
     <Compile Include="POUs\LampControl.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\LinkUI.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>

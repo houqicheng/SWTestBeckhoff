@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <POU Name="LinkUI" Id="{1a1c3c5e-22cb-45b4-b980-f09563072448}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM LinkUI
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[GVL_General.bStart := GVL_General.bStartBtn;
+GVL_General.bPause := GVL_General.bPauseBtn;
+GVL_General.bStop := GVL_General.bStopBtn;
+
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="LinkUI">
+      <LineId Id="5" Count="2" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="8" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
