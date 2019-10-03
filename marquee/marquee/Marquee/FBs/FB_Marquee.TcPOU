@@ -15,8 +15,11 @@ VAR
 	TON2		:TON;
 	TON3		:TON;
 	TON4		:TON;
+	TON5		:TON;
 	rTrig		:F_TRIG;
 	iStep		:INT;
+	_bDelayOK		:BOOL;
+	iCaseStep		:UDINT;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -27,7 +30,9 @@ END_VAR
 VAR_INPUT
 	bStart			:BOOL;
 END_VAR
-]]></Declaration>
+VAR
+	
+END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[(*IF bStart THEN
 	 
@@ -64,29 +69,29 @@ IF bStart THEN
 					pLamp01^ := FALSE;
 					TON1(IN:=FALSE);
 					iStep:= 10;
-				END_IF
+				END_IF				
 			10:
 				pLamp02^ := TRUE;
-				TON2(IN:=TRUE, PT:=T#1S, Q=> , ET=> );
-				IF TON2.Q THEN 
+				TON1(IN:=TRUE, PT:=T#1S, Q=> , ET=> );
+				IF TON1.Q THEN 
 					pLamp02^ := FALSE;
-					TON2(IN:=FALSE);
+					TON1(IN:=FALSE);
 					iStep := 20;				
 				END_IF
 			20:
 				pLamp03^ := TRUE;
-				TON3(IN:=TRUE, PT:=T#1S, Q=> , ET=> );
-				IF TON3.Q THEN 
+				TON1(IN:=TRUE, PT:=T#1S, Q=> , ET=> );
+				IF TON1.Q THEN 
 					pLamp03^ := FALSE;
-					TON3(IN:=FALSE);
+					TON1(IN:=FALSE);
 					iStep := 30;
 				END_IF
 			30:
 				pLamp04^ := TRUE;
-				TON4(IN:=TRUE, PT:=T#1S, Q=> , ET=> );
-				IF	TON4.Q THEN 
-					pLamp04^ := FALSE;
-					TON4(IN:=FALSE);
+				TON1(IN:=TRUE, PT:=T#1S, Q=> , ET=> );
+				IF	TON1.Q THEN 
+					pLamp04^ := NOT pLamp04^;
+					TON1(IN:=FALSE);
 					iStep := 0;
 				END_IF
 	END_CASE
@@ -98,6 +103,64 @@ ELSE
 END_IF
 
 
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Delay" Id="{9f5cd697-b373-4c1d-b2b6-4c68704762c7}">
+      <Declaration><![CDATA[METHOD PROTECTED Delay : BOOL
+VAR_INPUT
+	in		:TIME:=T#0S;
+END_VAR
+VAR_OUTPUT
+	bDelayOK	:BOOL;
+END_VAR
+VAR
+	
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+CASE iCaseStep OF
+	0:
+		TON5(IN:= FALSE);
+		_bDelayOK := FALSE;
+		iCaseStep := 10;
+	10:
+		TON5(IN:=TRUE , PT:= in, Q=> , ET=> );
+		IF TON5.Q THEN 
+			_bDelayOK := TRUE;
+			iCaseStep := 100;
+		END_IF
+END_CASE
+]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="P_bDelayOK" Id="{850c1c84-121e-40c0-92d2-8aa2e4f320e2}">
+      <Declaration><![CDATA[PROPERTY P_bDelayOK : BOOL]]></Declaration>
+      <Get Name="Get" Id="{873b1792-9428-43b2-ab5a-15312e6afd72}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[P_bDelayOK := _bDelayOK;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{4f7540b8-5730-4931-813c-3d5aae77f586}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_bDelayOK := P_bDelayOK;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Method Name="Reset" Id="{2a1e7628-6dce-4da3-aaf9-ad280671f9cc}">
+      <Declaration><![CDATA[METHOD PROTECTED Reset : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[iCaseStep := 0;
+_bDelayOK := FALSE;
 ]]></ST>
       </Implementation>
     </Method>
@@ -144,6 +207,28 @@ END_IF
       <LineId Id="65" Count="0" />
       <LineId Id="86" Count="0" />
       <LineId Id="85" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Marquee.Delay">
+      <LineId Id="20" Count="1" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="27" Count="4" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Marquee.P_bDelayOK.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Marquee.P_bDelayOK.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Marquee.Reset">
+      <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="6" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
