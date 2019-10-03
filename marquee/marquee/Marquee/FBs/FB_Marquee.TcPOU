@@ -2,6 +2,7 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
   <POU Name="FB_Marquee" Id="{ffdf7d82-b4ab-4511-9b34-b7a7860a4a5b}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Marquee
+//trigger all four light rolling on and off one by one loop. On for 1 second.
 VAR_INPUT
 	pLamp01			:POINTER TO BOOL;
 	pLamp02			:POINTER TO BOOL;
@@ -11,15 +12,8 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
-	TON1		:TON;
-	TON2		:TON;
-	TON3		:TON;
-	TON4		:TON;
-	TON5		:TON;
-	rTrig		:F_TRIG;
-	iStep		:INT;
-	_bDelayOK		:BOOL;
-	iCaseStep		:UDINT;
+	TON1		:TON;	
+	iStep		:INT;	
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -106,64 +100,6 @@ END_IF
 ]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Delay" Id="{9f5cd697-b373-4c1d-b2b6-4c68704762c7}">
-      <Declaration><![CDATA[METHOD PROTECTED Delay : BOOL
-VAR_INPUT
-	in		:TIME:=T#0S;
-END_VAR
-VAR_OUTPUT
-	bDelayOK	:BOOL;
-END_VAR
-VAR
-	
-END_VAR]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[
-CASE iCaseStep OF
-	0:
-		TON5(IN:= FALSE);
-		_bDelayOK := FALSE;
-		iCaseStep := 10;
-	10:
-		TON5(IN:=TRUE , PT:= in, Q=> , ET=> );
-		IF TON5.Q THEN 
-			_bDelayOK := TRUE;
-			iCaseStep := 100;
-		END_IF
-END_CASE
-]]></ST>
-      </Implementation>
-    </Method>
-    <Property Name="P_bDelayOK" Id="{850c1c84-121e-40c0-92d2-8aa2e4f320e2}">
-      <Declaration><![CDATA[PROPERTY P_bDelayOK : BOOL]]></Declaration>
-      <Get Name="Get" Id="{873b1792-9428-43b2-ab5a-15312e6afd72}">
-        <Declaration><![CDATA[VAR
-END_VAR
-]]></Declaration>
-        <Implementation>
-          <ST><![CDATA[P_bDelayOK := _bDelayOK;]]></ST>
-        </Implementation>
-      </Get>
-      <Set Name="Set" Id="{4f7540b8-5730-4931-813c-3d5aae77f586}">
-        <Declaration><![CDATA[VAR
-END_VAR
-]]></Declaration>
-        <Implementation>
-          <ST><![CDATA[_bDelayOK := P_bDelayOK;]]></ST>
-        </Implementation>
-      </Set>
-    </Property>
-    <Method Name="Reset" Id="{2a1e7628-6dce-4da3-aaf9-ad280671f9cc}">
-      <Declaration><![CDATA[METHOD PROTECTED Reset : BOOL
-VAR_INPUT
-END_VAR
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[iCaseStep := 0;
-_bDelayOK := FALSE;
-]]></ST>
-      </Implementation>
-    </Method>
     <LineIds Name="FB_Marquee">
       <LineId Id="9" Count="0" />
     </LineIds>
@@ -207,28 +143,6 @@ _bDelayOK := FALSE;
       <LineId Id="65" Count="0" />
       <LineId Id="86" Count="0" />
       <LineId Id="85" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Marquee.Delay">
-      <LineId Id="20" Count="1" />
-      <LineId Id="24" Count="0" />
-      <LineId Id="27" Count="4" />
-      <LineId Id="26" Count="0" />
-      <LineId Id="32" Count="0" />
-      <LineId Id="34" Count="0" />
-      <LineId Id="33" Count="0" />
-      <LineId Id="25" Count="0" />
-      <LineId Id="15" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Marquee.P_bDelayOK.Get">
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Marquee.P_bDelayOK.Set">
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Marquee.Reset">
-      <LineId Id="5" Count="0" />
-      <LineId Id="7" Count="0" />
-      <LineId Id="6" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

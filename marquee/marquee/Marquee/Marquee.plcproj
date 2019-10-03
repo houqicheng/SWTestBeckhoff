@@ -16,10 +16,13 @@
     <Released>true</Released>
     <Company>HiJack Automation</Company>
     <Title>Marquee</Title>
-    <ProjectVersion>0.1</ProjectVersion>
+    <ProjectVersion>0.2</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="FBs\FB_Marquee.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FBs\FB_MarqueeEx.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PlcTask.TcTTO">

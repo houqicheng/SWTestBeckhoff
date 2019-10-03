@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <POU Name="FB_MarqueeEx" Id="{cea064c9-ea0d-41e7-8db8-562d6ad2edb7}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_MarqueeEx EXTENDS FB_Marquee
+//trigger all four light rolling on and off one by one loop. Ptime is the On elapse time
+VAR_INPUT	
+	pTime		:POINTER TO TIME;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	bDelayOK		:BOOL;
+	iDelayStep		:UDINT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Blinking" Id="{0a489c9d-1845-403a-945d-93fcfd46a9e4}">
+      <Declaration><![CDATA[METHOD Blinking : BOOL
+VAR_INPUT
+	bStart			:BOOL;
+END_VAR
+VAR
+	
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF bStart THEN 
+	CASE iStep OF 
+		0:
+			pLamp01^ := TRUE;
+			THIS^.Delay();
+			IF THIS^.bDelayOK THEN 
+				pLamp01^ := NOT pLamp01^;
+				THIS^.Reset();
+				iStep := 10;
+			END_IF
+		10:
+			pLamp02^ := TRUE;
+			THIS^.Delay();
+			IF bDelayOK THEN 
+				pLamp02^ := NOT pLamp02^;
+				THIS^.Reset();
+				iStep := 20;
+			END_IF
+		20:
+			pLamp03^ := TRUE;
+			THIS^.Delay();
+			IF bDelayOK THEN 
+				pLamp03^ := NOT pLamp03^;
+				THIS^.Reset();
+				iStep := 30;
+			END_IF
+		30:
+			pLamp04^ := TRUE;
+			THIS^.Delay();
+			IF bDelayOK THEN 
+				pLamp04^ := NOT pLamp04^;
+				THIS^.Reset();
+				iStep := 0;
+			END_IF
+		
+	END_CASE
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Delay" Id="{ecfbba6d-336a-43de-967f-8ab5bd09ac34}">
+      <Declaration><![CDATA[METHOD Delay : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE iDelayStep OF
+	0:
+		bDelayOK := FALSE;
+		TON1(IN:=FALSE);
+		iDelayStep := 10;
+	10:
+		TON1(IN:=TRUE , PT:= pTime^, Q=> , ET=> );
+		IF TON1.Q THEN 
+			TON1(IN:=FALSE);
+			bDelayOK := TRUE;
+			iDelayStep := 100;
+		END_IF
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Reset" Id="{a583413a-1adc-44e8-adba-af69b279d102}">
+      <Declaration><![CDATA[METHOD Reset : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[iDelayStep := 0;
+bDelayOK := FALSE;
+
+TON1(IN:=FALSE);
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_MarqueeEx">
+      <LineId Id="13" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_MarqueeEx.Blinking">
+      <LineId Id="8" Count="1" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="13" Count="3" />
+      <LineId Id="18" Count="1" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="20" Count="4" />
+      <LineId Id="26" Count="1" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="28" Count="4" />
+      <LineId Id="34" Count="1" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="38" Count="5" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="10" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_MarqueeEx.Delay">
+      <LineId Id="6" Count="3" />
+      <LineId Id="11" Count="4" />
+      <LineId Id="17" Count="1" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_MarqueeEx.Reset">
+      <LineId Id="5" Count="1" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
