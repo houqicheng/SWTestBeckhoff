@@ -3,12 +3,17 @@
   <POU Name="MAIN" Id="{fa671d83-edd0-492d-886f-c7d702fe85de}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	fbMarquee		:FB_Marquee;
+	(*fbMarquee		:FB_Marquee;
 	bLamp01,bLamp02,bLamp03,bLamp04		:BOOL;
 	bBlinking			:BOOL;
 	
 	fbMarqueeEx		:FB_MarqueeEx;
 	tDelay			:TIME:=T#500MS;
+	
+	
+	fbMarqueeExPause		:FB_MarqueeExPause;
+	bPause					:BOOL;
+	bStop					:BOOL;*)
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -19,11 +24,19 @@ END_VAR
 
 
 //===============Test FB_MarqueeEx======================
-fbMarqueeEx(pLamp01:= ADR(bLamp01) , pLamp02:=ADR(bLamp02),
-			 pLamp03:=ADR(bLamp03) , pLamp04:= ADR(bLamp04),pTime:= ADR(tDelay));
+//fbMarqueeEx(pLamp01:= ADR(bLamp01) , pLamp02:=ADR(bLamp02),
+//			 pLamp03:=ADR(bLamp03) , pLamp04:= ADR(bLamp04),pTime:= ADR(tDelay));
 			 
-fbMarqueeEx.Blinking(bStart := bBlinking);
+//fbMarqueeEx.Blinking(bStart := bBlinking);
 //===============Test FB_MarqueeEx======================
+
+
+//===============Test FB_MarqueeExPause======================
+(*fbMarqueeExPause(pLamp01:= ADR(bLamp01) , pLamp02:=ADR(bLamp02),
+			 pLamp03:=ADR(bLamp03) , pLamp04:= ADR(bLamp04),pTime:= ADR(tDelay),pPause:= ADR(bPause),pStop := ADR(bStop));
+fbMarqueeExPause.Blinking(bStart := bBlinking);*)
+
+
 
 ]]></ST>
     </Implementation>
@@ -36,6 +49,10 @@ fbMarqueeEx.Blinking(bStart := bBlinking);
       <LineId Id="20" Count="0" />
       <LineId Id="30" Count="1" />
       <LineId Id="33" Count="2" />
+      <LineId Id="46" Count="1" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="59" Count="3" />
+      <LineId Id="48" Count="0" />
       <LineId Id="11" Count="0" />
       <LineId Id="9" Count="0" />
     </LineIds>

@@ -9,8 +9,11 @@ VAR_GLOBAL
 	bLamp03			AT %Q* :BOOL;
 	bLamp04			AT %Q* :BOOL;
 	
-	//bStart			AT %I* :BOOL;
-	//bStop				AT %I*	:BOOL;
+	bStart				 	:BOOL;
+	bStop					:BOOL;
+	bPause					:BOOL;
+	tDelay					:TIME:= T#1S;
+	
 	//=====================UI Button=============================
 	bStartBtn			:BOOL;
 	bStopBtn			:BOOL;
@@ -18,6 +21,10 @@ VAR_GLOBAL
 	//=====================UI Button=============================
 	
 	
+	//=============Function Blcok instance===================
+	fbMarqueeExPause		:FB_MarqueeExPause:=(pLamp01:=ADR(GVL_General.bLamp01),pLamp02:=ADR(GVL_General.bLamp02),
+					pLamp03:=ADR(GVL_General.bLamp03),pLamp04:=ADR(GVL_General.bLamp04),
+					pTime:=ADR(GVL_General.tDelay),pPause:=ADR(GVL_General.bPause),pStop:=ADR(GVL_General.bStop));;
 	
 	
 	

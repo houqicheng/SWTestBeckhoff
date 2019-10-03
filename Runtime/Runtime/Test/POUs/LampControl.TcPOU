@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <POU Name="LampControl" Id="{3534f894-9fbd-456b-ae83-2812a303eb30}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM LampControl
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[GVL_General.fbMarqueeExPause();
+GVL_General.fbMarqueeExPause.Blinking(bStart:=GVL_General.bStart );
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="LampControl">
+      <LineId Id="5" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="21" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

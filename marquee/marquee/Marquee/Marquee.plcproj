@@ -16,13 +16,17 @@
     <Released>true</Released>
     <Company>HiJack Automation</Company>
     <Title>Marquee</Title>
-    <ProjectVersion>0.2</ProjectVersion>
+    <ProjectVersion>0.3</ProjectVersion>
+    <Description>Add pause and stop function</Description>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="FBs\FB_Marquee.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FBs\FB_MarqueeEx.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FBs\FB_MarqueeExPause.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PlcTask.TcTTO">

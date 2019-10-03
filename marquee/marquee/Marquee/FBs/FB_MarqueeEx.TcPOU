@@ -58,9 +58,13 @@ END_VAR]]></Declaration>
 				pLamp04^ := NOT pLamp04^;
 				THIS^.Reset();
 				iStep := 0;
-			END_IF
-		
+			END_IF		
 	END_CASE
+ELSE 
+	pLamp04^ := FALSE;
+	pLamp03^ := FALSE;
+	pLamp02^ := FALSE;
+	pLamp01^ := FALSE;
 END_IF]]></ST>
       </Implementation>
     </Method>
@@ -116,8 +120,9 @@ TON1(IN:=FALSE);
       <LineId Id="36" Count="0" />
       <LineId Id="38" Count="5" />
       <LineId Id="37" Count="0" />
-      <LineId Id="45" Count="0" />
       <LineId Id="12" Count="0" />
+      <LineId Id="53" Count="3" />
+      <LineId Id="52" Count="0" />
       <LineId Id="10" Count="0" />
     </LineIds>
     <LineIds Name="FB_MarqueeEx.Delay">
