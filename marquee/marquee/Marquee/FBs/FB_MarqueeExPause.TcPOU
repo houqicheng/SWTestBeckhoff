@@ -55,16 +55,22 @@ IF bStart THEN
 			pLamp04^ := TRUE;
 			THIS^.Delay();
 			IF bDelayOK THEN 
-				pLamp04^ := NOT pLamp04^;
+				pLamp04^ := FALSE;
 				THIS^.Reset();
-				IF pStop^ THEN 
-					bStart := NOT bStart;					
-					//pStop^ := NOT pStop^;			
-					//iStep := 0;
+				IF pStop^ THEN 					
+					iStep:= 40;
 				ELSE
 					iStep := 0;
 				END_IF				
-			END_IF		
+			END_IF	
+		40:
+			bStart := FALSE;					
+			pStop^ := FALSE;	
+			pLamp04^ := FALSE;
+			pLamp03^ := FALSE;
+			pLamp02^ := FALSE;
+			pLamp01^ := FALSE;
+			THIS^.Reset();	
 	END_CASE
 ELSE 
 	pLamp04^ := FALSE;
@@ -100,6 +106,15 @@ END_VAR
 END_CASE]]></ST>
       </Implementation>
     </Method>
+    <Method Name="Reset" Id="{03cb8ed6-9bbe-4f29-a881-858df3e8f24f}">
+      <Declaration><![CDATA[METHOD Reset : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SUPER^.Reset();]]></ST>
+      </Implementation>
+    </Method>
     <LineIds Name="FB_MarqueeExPause">
       <LineId Id="9" Count="0" />
     </LineIds>
@@ -108,12 +123,14 @@ END_CASE]]></ST>
       <LineId Id="12" Count="0" />
       <LineId Id="60" Count="0" />
       <LineId Id="13" Count="30" />
-      <LineId Id="53" Count="1" />
-      <LineId Id="56" Count="0" />
-      <LineId Id="58" Count="0" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="74" Count="0" />
       <LineId Id="61" Count="1" />
       <LineId Id="55" Count="0" />
       <LineId Id="45" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="78" Count="1" />
+      <LineId Id="81" Count="4" />
       <LineId Id="47" Count="0" />
       <LineId Id="49" Count="3" />
       <LineId Id="48" Count="0" />
@@ -128,6 +145,9 @@ END_CASE]]></ST>
       <LineId Id="21" Count="0" />
       <LineId Id="19" Count="1" />
       <LineId Id="16" Count="1" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_MarqueeExPause.Reset">
       <LineId Id="5" Count="0" />
     </LineIds>
   </POU>

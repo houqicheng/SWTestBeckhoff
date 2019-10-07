@@ -3,7 +3,7 @@
   <POU Name="MAIN" Id="{fa671d83-edd0-492d-886f-c7d702fe85de}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	(*fbMarquee		:FB_Marquee;
+	fbMarquee		:FB_Marquee;
 	bLamp01,bLamp02,bLamp03,bLamp04		:BOOL;
 	bBlinking			:BOOL;
 	
@@ -13,7 +13,7 @@ VAR
 	
 	fbMarqueeExPause		:FB_MarqueeExPause;
 	bPause					:BOOL;
-	bStop					:BOOL;*)
+	bStop					:BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -34,7 +34,7 @@ END_VAR
 //===============Test FB_MarqueeExPause======================
 (*fbMarqueeExPause(pLamp01:= ADR(bLamp01) , pLamp02:=ADR(bLamp02),
 			 pLamp03:=ADR(bLamp03) , pLamp04:= ADR(bLamp04),pTime:= ADR(tDelay),pPause:= ADR(bPause),pStop := ADR(bStop));
-fbMarqueeExPause.Blinking(bStart := bBlinking);*)
+fbMarqueeExPause.Blinking(bStart :=bBlinking);  *)
 
 
 
