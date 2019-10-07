@@ -39,10 +39,6 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderReference Include="Marquee">
-      <DefaultResolution>Marquee, * (HiJack Automation)</DefaultResolution>
-      <Namespace>Marquee</Namespace>
-    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_Standard</Namespace>
@@ -62,9 +58,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderResolution Include="Marquee">
-      <Resolution>Marquee, * (HiJack Automation)</Resolution>
-    </PlaceholderResolution>
+    <LibraryReference Include="Marquee,0.5,HiJack Automation">
+      <Namespace>Marquee</Namespace>
+    </LibraryReference>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

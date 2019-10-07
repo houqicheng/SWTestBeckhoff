@@ -20,12 +20,14 @@ VAR_INPUT
 	bStart			:BOOL;
 END_VAR
 VAR
-	bFirstRun		:BOOL:=TRUE;
+	bRunning		:BOOL;
+	fTrig		:F_TRIG;
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF bStart THEN
+        <ST><![CDATA[IF bStart THEN	
 	CASE iStep OF			
 		0:
+			bRunning := TRUE;
 			pLamp01^ := TRUE;
 			THIS^.Delay();
 			IF THIS^.bDelayOK THEN 
@@ -55,20 +57,22 @@ END_VAR]]></Declaration>
 			IF bDelayOK THEN 
 				pLamp04^ := FALSE;
 				SUPER^.Reset();
-				IF pStop^ THEN 					
+				IF pStop^ THEN									
 					iStep:= 40;
 				ELSE
 					iStep := 0;
 				END_IF				
 			END_IF	
-		40:
-			bStart := FALSE;					
-			pStop^ := FALSE;	
+		40:		
 			pLamp04^ := FALSE;
 			pLamp03^ := FALSE;
 			pLamp02^ := FALSE;
-			pLamp01^ := FALSE;	
-			//iStep := 0;		
+			pLamp01^ := FALSE;				
+			iStep := 50;
+		50:			
+			IF NOT pStop^ THEN 
+				iStep := 0;
+			END_IF			
 	END_CASE
 ELSE 
 	pLamp04^ := FALSE;
@@ -118,16 +122,18 @@ iStep := 0;]]></ST>
       <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="FB_MarqueeExPause.Blinking">
-      <LineId Id="12" Count="31" />
+      <LineId Id="12" Count="2" />
+      <LineId Id="106" Count="0" />
+      <LineId Id="15" Count="28" />
       <LineId Id="53" Count="0" />
       <LineId Id="74" Count="0" />
       <LineId Id="61" Count="1" />
       <LineId Id="55" Count="0" />
       <LineId Id="45" Count="0" />
       <LineId Id="75" Count="0" />
-      <LineId Id="78" Count="1" />
       <LineId Id="81" Count="3" />
-      <LineId Id="92" Count="0" />
+      <LineId Id="100" Count="1" />
+      <LineId Id="114" Count="2" />
       <LineId Id="47" Count="0" />
       <LineId Id="49" Count="3" />
       <LineId Id="48" Count="0" />

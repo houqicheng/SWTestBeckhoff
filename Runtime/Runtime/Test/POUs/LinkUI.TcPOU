@@ -3,10 +3,17 @@
   <POU Name="LinkUI" Id="{1a1c3c5e-22cb-45b4-b980-f09563072448}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM LinkUI
 VAR
+	rTrig		:R_TRIG;
+	bStartSet	:	SR;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[GVL_General.bStart := GVL_General.bStartBtn;
+      <ST><![CDATA[
+GVL_General.bStart := GVL_General.bStartBtn;
+rTrig(CLK:= GVL_General.bStartBtn);
+IF	rTrig.Q THEN 
+	bStartSet(SET1:= GVL_General.bStart, RESET:= , Q1=> );
+END_IF
 GVL_General.bPause := GVL_General.bPauseBtn;
 GVL_General.bStop := GVL_General.bStopBtn;
 
@@ -15,7 +22,11 @@ GVL_General.bStop := GVL_General.bStopBtn;
 ]]></ST>
     </Implementation>
     <LineIds Name="LinkUI">
-      <LineId Id="5" Count="2" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="18" Count="2" />
+      <LineId Id="6" Count="1" />
       <LineId Id="11" Count="0" />
       <LineId Id="10" Count="0" />
       <LineId Id="9" Count="0" />
