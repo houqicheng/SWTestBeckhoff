@@ -20,19 +20,17 @@ VAR_INPUT
 	bStart			:BOOL;
 END_VAR
 VAR
-	
+	bFirstRun		:BOOL:=TRUE;
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[
-IF bStart THEN 
-	
-	CASE iStep OF 
+        <ST><![CDATA[IF bStart THEN
+	CASE iStep OF			
 		0:
 			pLamp01^ := TRUE;
 			THIS^.Delay();
 			IF THIS^.bDelayOK THEN 
 				pLamp01^ := NOT pLamp01^;
-				THIS^.Reset();
+				SUPER^.Reset();
 				iStep := 10;
 			END_IF
 		10:
@@ -40,7 +38,7 @@ IF bStart THEN
 			THIS^.Delay();
 			IF bDelayOK THEN 
 				pLamp02^ := NOT pLamp02^;
-				THIS^.Reset();
+				SUPER^.Reset();
 				iStep := 20;
 			END_IF
 		20:
@@ -48,7 +46,7 @@ IF bStart THEN
 			THIS^.Delay();
 			IF bDelayOK THEN 
 				pLamp03^ := NOT pLamp03^;
-				THIS^.Reset();
+				SUPER^.Reset();
 				iStep := 30;
 			END_IF
 		30:
@@ -56,7 +54,7 @@ IF bStart THEN
 			THIS^.Delay();
 			IF bDelayOK THEN 
 				pLamp04^ := FALSE;
-				THIS^.Reset();
+				SUPER^.Reset();
 				IF pStop^ THEN 					
 					iStep:= 40;
 				ELSE
@@ -69,8 +67,8 @@ IF bStart THEN
 			pLamp04^ := FALSE;
 			pLamp03^ := FALSE;
 			pLamp02^ := FALSE;
-			pLamp01^ := FALSE;
-			THIS^.Reset();	
+			pLamp01^ := FALSE;	
+			//iStep := 0;		
 	END_CASE
 ELSE 
 	pLamp04^ := FALSE;
@@ -112,17 +110,15 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[SUPER^.Reset();]]></ST>
+        <ST><![CDATA[SUPER^.Reset();
+iStep := 0;]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_MarqueeExPause">
       <LineId Id="9" Count="0" />
     </LineIds>
     <LineIds Name="FB_MarqueeExPause.Blinking">
-      <LineId Id="8" Count="0" />
-      <LineId Id="12" Count="0" />
-      <LineId Id="60" Count="0" />
-      <LineId Id="13" Count="30" />
+      <LineId Id="12" Count="31" />
       <LineId Id="53" Count="0" />
       <LineId Id="74" Count="0" />
       <LineId Id="61" Count="1" />
@@ -130,7 +126,8 @@ END_VAR
       <LineId Id="45" Count="0" />
       <LineId Id="75" Count="0" />
       <LineId Id="78" Count="1" />
-      <LineId Id="81" Count="4" />
+      <LineId Id="81" Count="3" />
+      <LineId Id="92" Count="0" />
       <LineId Id="47" Count="0" />
       <LineId Id="49" Count="3" />
       <LineId Id="48" Count="0" />
@@ -149,6 +146,7 @@ END_VAR
     </LineIds>
     <LineIds Name="FB_MarqueeExPause.Reset">
       <LineId Id="5" Count="0" />
+      <LineId Id="9" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

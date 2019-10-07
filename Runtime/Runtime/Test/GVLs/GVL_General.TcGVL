@@ -23,8 +23,9 @@ VAR_GLOBAL
 	
 	//=============Function Blcok instance===================
 	fbMarqueeExPause		:FB_MarqueeExPause:=(pLamp01:=ADR(GVL_General.bLamp01),pLamp02:=ADR(GVL_General.bLamp02),
-					pLamp03:=ADR(GVL_General.bLamp03),pLamp04:=ADR(GVL_General.bLamp04),
-					pTime:=ADR(GVL_General.tDelay),pPause:=ADR(GVL_General.bPause),pStop:=ADR(GVL_General.bStop));;
+												pLamp03:=ADR(GVL_General.bLamp03),pLamp04:=ADR(GVL_General.bLamp04),
+												pTime:=ADR(GVL_General.tDelay),pPause:=ADR(GVL_General.bPause),
+												pStop:=ADR(GVL_General.bStop));;
 	
 	
 	
