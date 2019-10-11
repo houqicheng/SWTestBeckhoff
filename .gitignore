@@ -15,9 +15,9 @@
 # TwinCAT build results
 _CompileInfo/
 _Boot/
-#*.tpy
+*.tpy
 *.tmcRefac
-#*.tmc
+*.tmc
 
 #TwinCAT compiled libraries
 *.compiled-library
