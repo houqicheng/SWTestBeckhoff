@@ -120,6 +120,7 @@
             this.btnHistory.TabIndex = 3;
             this.btnHistory.Text = "Log Page";
             this.btnHistory.UseVisualStyleBackColor = false;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // Form1
             // 
