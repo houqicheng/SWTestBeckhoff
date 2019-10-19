@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <POU Name="FB_SignalHandling" Id="{2df786a4-bf08-4249-ad63-77f16f1800cf}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SignalHandling
+VAR_INPUT
+	bSignalInput			:BOOL;
+END_VAR
+VAR_OUTPUT
+	bSignalOutput			:BOOL;
+END_VAR
+VAR
+	bLocalEnable		:BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="FB_init" Id="{41f96695-ff37-483a-9167-37d4dfaa1c92}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+	
+	
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SetOutput" Id="{61cd6f68-a849-45f6-84dc-71b222c96424}">
+      <Declaration><![CDATA[METHOD SetOutput : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bSignalOutput := (bLocalEnable AND bSignalInput);
+
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SignalEnable" Id="{b1373d9f-d853-4cdb-9f55-3c60b7fe1632}">
+      <Declaration><![CDATA[METHOD SignalEnable : BOOL
+VAR_INPUT
+	bSignalLocalEnable		:BOOL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bLocalEnable := bSignalLocalEnable;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_SignalHandling">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SignalHandling.FB_init">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SignalHandling.SetOutput">
+      <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_SignalHandling.SignalEnable">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

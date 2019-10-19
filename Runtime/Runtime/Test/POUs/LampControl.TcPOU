@@ -7,17 +7,17 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[GVL_General.fbMarqueeExPause();
-IF GVL_General.bStart THEN 
-	;
-END_IF
-GVL_General.fbMarqueeExPause.Blinking(bStart:=GVL_General.bStart );
+
+//==========call the "Blinking" method ================================
+GVL_General.fbMarqueeExPause.Blinking(bStart:=GVL_Machine.HWIO.HWInput.StartBtn OR GVL_General.bStartBtnUI );
 
 
 ]]></ST>
     </Implementation>
     <LineIds Name="LampControl">
       <LineId Id="5" Count="0" />
-      <LineId Id="27" Count="2" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="29" Count="0" />
       <LineId Id="20" Count="0" />
       <LineId Id="23" Count="0" />
       <LineId Id="22" Count="0" />

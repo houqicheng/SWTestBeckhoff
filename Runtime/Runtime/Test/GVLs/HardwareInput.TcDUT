@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="HardwareInput" Id="{672b43f7-3d4c-4311-a11e-23078f673ba9}">
+    <Declaration><![CDATA[TYPE HardwareInput :
+STRUCT
+	StartBtn			AT%I*	 	:BOOL;
+	StopBtn				AT%I*	 	:BOOL;
+	PauseBtn			AT%I*	 	:BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -13,25 +13,40 @@
 				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Test\Test.tmc">
 					<Name>Test Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>GVL_Machine.HWIO.HWInput.StartBtn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Machine.HWIO.HWInput.StopBtn</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Machine.HWIO.HWInput.PauseBtn</Name>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>GVL_General.bLamp01</Name>
+							<Name>GVL_Machine.HWIO.HWOutput.Lamp01</Name>
 							<Comment>
-								<![CDATA[ ==============hardware IO======================]]>
+								<![CDATA[===============================hardware output===============]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_General.bLamp02</Name>
+							<Name>GVL_Machine.HWIO.HWOutput.Lamp02</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_General.bLamp03</Name>
+							<Name>GVL_Machine.HWIO.HWOutput.Lamp03</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_General.bLamp04</Name>
+							<Name>GVL_Machine.HWIO.HWOutput.Lamp04</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>

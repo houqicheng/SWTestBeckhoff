@@ -7,16 +7,31 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[LinkUI();
-LampControl();
+      <ST><![CDATA[
 
+//======================Handl the signal from UI=================== 
+	LinkUI();
+//======================Handl the signal from UI=================== 
+
+
+
+//====================handle the lights rolling======================
+	LampControl();
+//====================handle the lights rolling======================
 
 
 					
 					]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
+      <LineId Id="41" Count="1" />
+      <LineId Id="40" Count="0" />
       <LineId Id="33" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="44" Count="0" />
       <LineId Id="31" Count="0" />
       <LineId Id="35" Count="0" />
       <LineId Id="34" Count="0" />

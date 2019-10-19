@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="HardwareOutput" Id="{596fb453-c3ae-437d-98dc-4f0a56968f67}">
+    <Declaration><![CDATA[TYPE HardwareOutput :
+STRUCT
+	//===============================hardware output===============
+	Lamp01			AT %Q* :BOOL;
+	Lamp02			AT %Q* :BOOL;
+	Lamp03			AT %Q* :BOOL;
+	Lamp04			AT %Q* :BOOL;
+	//===============================hardware output===============
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
