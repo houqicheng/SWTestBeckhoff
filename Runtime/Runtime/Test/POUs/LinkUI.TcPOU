@@ -3,14 +3,15 @@
   <POU Name="LinkUI" Id="{1a1c3c5e-22cb-45b4-b980-f09563072448}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM LinkUI
 VAR
-	bTemp		:BOOL;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[GVL_SignalHanlding.fbPauseUI();
+      <ST><![CDATA[GVL_SignalHanlding.fbPauseUI.bSignalInput := GVL_General.bPauseBtnUI;
 GVL_SignalHanlding.fbPauseUI.SignalEnable(bSignalLocalEnable:= TRUE);
 GVL_SignalHanlding.fbPauseUI.SetOutput();
-//bTemp := GVL_SignalHanlding.fbPauseUI.bSignalOutput;
+GVL_General.btemp := GVL_SignalHanlding.fbPauseUI.bSignalOutput;
+
 
 
 
@@ -24,6 +25,7 @@ GVL_SignalHanlding.fbPauseUI.SetOutput();
       <LineId Id="15" Count="0" />
       <LineId Id="29" Count="0" />
       <LineId Id="31" Count="0" />
+      <LineId Id="36" Count="0" />
       <LineId Id="30" Count="0" />
       <LineId Id="28" Count="0" />
       <LineId Id="27" Count="0" />

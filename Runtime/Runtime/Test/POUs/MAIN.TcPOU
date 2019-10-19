@@ -8,7 +8,8 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-
+	SignalHandler();
+	
 //======================Handl the signal from UI=================== 
 	LinkUI();
 //======================Handl the signal from UI=================== 
@@ -25,6 +26,7 @@ END_VAR
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="41" Count="1" />
+      <LineId Id="52" Count="0" />
       <LineId Id="40" Count="0" />
       <LineId Id="33" Count="0" />
       <LineId Id="43" Count="0" />
