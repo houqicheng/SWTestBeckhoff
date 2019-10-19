@@ -9,7 +9,9 @@ END_VAR
       <ST><![CDATA[GVL_General.fbMarqueeExPause();
 
 //==========call the "Blinking" method ================================
-GVL_General.fbMarqueeExPause.Blinking(bStart:=GVL_Machine.HWIO.HWInput.StartBtn OR GVL_General.bStartBtnUI );
+//GVL_General.fbMarqueeExPause.Blinking(bStart:=GVL_Machine.HWIO.HWInput.StartBtn OR GVL_General.bStartBtnUI );
+
+GVL_General.fbMarqueeExPause.Blinking(bStart:=GVL_SignalHanlding.fbHandleStartBtn.bSignalOutput OR GVL_General.bStartBtnUI );
 
 
 ]]></ST>
@@ -19,6 +21,8 @@ GVL_General.fbMarqueeExPause.Blinking(bStart:=GVL_Machine.HWIO.HWInput.StartBtn 
       <LineId Id="33" Count="0" />
       <LineId Id="29" Count="0" />
       <LineId Id="20" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="37" Count="0" />
       <LineId Id="23" Count="0" />
       <LineId Id="22" Count="0" />
       <LineId Id="21" Count="0" />

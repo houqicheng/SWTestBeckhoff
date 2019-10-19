@@ -3,7 +3,12 @@
   <GVL Name="GVL_SignalHanlding" Id="{4ac69a16-daca-4fcb-9c6c-3f36991b4512}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-	fbPauseUI		:FB_SignalHandling :=(bSignalInput:= GVL_General.bPauseBtnUI);
+	
+	//fbPauseUI		:FB_SignalHandling :=(bSignalInput:= GVL_General.bPauseBtnUI);   cannot assigned the signal here.
+	fbPauseUI		:FB_SignalHandling;
+	
+	fbHandleStartBtn		:FB_SignalHandling;
+	inPauseBtnHandling	:FB_SignalHandling;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

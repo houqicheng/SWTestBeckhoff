@@ -15,18 +15,6 @@ END_VAR
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
-    <Method Name="FB_init" Id="{41f96695-ff37-483a-9167-37d4dfaa1c92}">
-      <Declaration><![CDATA[METHOD FB_init : BOOL
-VAR_INPUT
-	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
-	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)	
-	
-END_VAR
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[]]></ST>
-      </Implementation>
-    </Method>
     <Method Name="SetOutput" Id="{61cd6f68-a849-45f6-84dc-71b222c96424}">
       <Declaration><![CDATA[METHOD SetOutput : BOOL
 VAR_INPUT
@@ -50,9 +38,6 @@ END_VAR
     </Method>
     <LineIds Name="FB_SignalHandling">
       <LineId Id="9" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_SignalHandling.FB_init">
-      <LineId Id="7" Count="0" />
     </LineIds>
     <LineIds Name="FB_SignalHandling.SetOutput">
       <LineId Id="5" Count="0" />

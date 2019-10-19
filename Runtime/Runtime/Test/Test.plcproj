@@ -38,16 +38,25 @@
     <Compile Include="GVLs\HardwareOutput.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GVLs\MachineMode.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\LampControl.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\LinkHWIO.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\LinkUI.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\ModeManger.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\SignalHandler.TcPOU">

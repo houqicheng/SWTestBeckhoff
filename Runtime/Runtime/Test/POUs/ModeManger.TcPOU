@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <POU Name="ModeManger" Id="{c86caeba-dcb1-4820-a4b8-dc420e7c71f2}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM ModeManger
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[GVL_Machine.machineMode := MachineMode.Auto;]]></ST>
+    </Implementation>
+    <LineIds Name="ModeManger">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

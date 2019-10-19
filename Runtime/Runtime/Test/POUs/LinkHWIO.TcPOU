@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <POU Name="LinkHWIO" Id="{ca7c5f8c-3572-4336-a709-121a682bf16f}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM LinkHWIO
+VAR
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[GVL_SignalHanlding.fbHandleStartBtn.bSignalInput := GVL_Machine.HWIO.HWInput.StartBtn OR GVL_SignalHanlding.fbHandleStartBtn.bSignalInput;
+GVL_SignalHanlding.fbHandleStartBtn.SignalEnable(bSignalLocalEnable := (GVL_Machine.machineMode = MachineMode.Auto));
+GVL_SignalHanlding.fbHandleStartBtn.SetOutput();
+
+
+//==========Hardware signal inPauseBtn handle==========
+GVL_SignalHanlding.inPauseBtnHandling.bSignalInput := ((GVL_Machine.HWIO.HWInput.PauseBtn OR GVL_SignalHanlding.fbPauseUI.bSignalOutput
+														 OR GVL_SignalHanlding.inPauseBtnHandling.bSignalInput) AND NOT (GVL_Machine.HWIO.HWInput.StartBtn));
+GVL_SignalHanlding.inPauseBtnHandling.SignalEnable(bSignalLocalEnable := (GVL_Machine.machineMode = MachineMode.Auto));
+GVL_SignalHanlding.inPauseBtnHandling.SetOutput();
+//==========Hardware signal inPause handle==========
+]]></ST>
+    </Implementation>
+    <LineIds Name="LinkHWIO">
+      <LineId Id="9" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="10" Count="1" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="16" Count="1" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

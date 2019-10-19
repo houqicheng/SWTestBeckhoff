@@ -7,10 +7,12 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[GVL_SignalHanlding.fbPauseUI.bSignalInput := GVL_General.bPauseBtnUI;
+      <ST><![CDATA[
+//==================Pause button from UI================================
+GVL_SignalHanlding.fbPauseUI.bSignalInput := GVL_General.bPauseBtnUI;
 GVL_SignalHanlding.fbPauseUI.SignalEnable(bSignalLocalEnable:= TRUE);
 GVL_SignalHanlding.fbPauseUI.SetOutput();
-GVL_General.btemp := GVL_SignalHanlding.fbPauseUI.bSignalOutput;
+//==================Pause button from UI================================
 
 
 
@@ -22,6 +24,7 @@ GVL_General.btemp := GVL_SignalHanlding.fbPauseUI.bSignalOutput;
 ]]></ST>
     </Implementation>
     <LineIds Name="LinkUI">
+      <LineId Id="41" Count="1" />
       <LineId Id="15" Count="0" />
       <LineId Id="29" Count="0" />
       <LineId Id="31" Count="0" />

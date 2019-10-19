@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.27">
+	<ImageDatas>
+		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0000000c0c0c0000000808080007fff007fff007fff007fff007fffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080007fff007fff007fff007fff007fffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080007fff007fff007fff007fff007fffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0008000c0c0c0008000808080007fff007fff007fff007fff007fffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080007fff007fff007fff007fff007fff</ImageData>
+	</ImageDatas>
 	<Project ProjectGUID="{13D2A8F4-688D-4FE3-A7DE-588551950CA9}" Target64Bit="true" ShowHideConfigurations="#x306">
 		<System>
 			<Tasks>
@@ -56,5 +59,84 @@
 				</Instance>
 			</Project>
 		</Plc>
+		<Io>
+			<Device DevType="111" DevFlags="#x0003" AmsPort="28674" AmsNetId="192.168.1.105.3.1" RemoteName="Device 2 (EtherCAT)" Id="2">
+				<Name>Device 2 (EtherCAT)</Name>
+				<AddressInfo>
+					<Pnp>
+						<DeviceDesc>Ethernet (Intel(R) Ethernet Connection (4) I219-V)</DeviceDesc>
+						<DeviceName>\DEVICE\{C180572A-716D-4EB0-90BC-DBBC808C5321}</DeviceName>
+						<DeviceData>1062e5536d0c</DeviceData>
+					</Pnp>
+				</AddressInfo>
+				<Image Id="1" AddrType="9" ImageType="3">
+					<Name>Image</Name>
+				</Image>
+				<Box BoxType="9099" Id="1">
+					<Name>Term 1 (EK1814)</Name>
+					<ImageId>1000</ImageId>
+					<EtherCAT SlaveType="1" PdiType="#x0d04" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x07162c52" RevisionNo="#x00130000" RepeatSupport="true" CheckRevisionNoType="3" PortPhys="305" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1814 EtherCAT IO-Coupler  (1A E-Bus, 4 Ch. Dig. In, 3ms, 4 Ch. Dig. Out 24V, 0,5A)" Desc="EK1814" PortABoxInfo="#x00ffffff">
+						<SyncMan>010f01004400010003000000010001000100010f44090000</SyncMan>
+						<SyncMan>001001000000010004000000010001000100001000010000</SyncMan>
+						<Fmmu>0000000000000000010f00020100000001000000000000000000000000000000</Fmmu>
+						<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
+						<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="1">
+							<Entry Name="Input" Index="#x6000" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="1">
+							<Entry Name="Input" Index="#x6010" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Channel 3" Index="#x1a02" Flags="#x0011" SyncMan="1">
+							<Entry Name="Input" Index="#x6020" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Channel 4" Index="#x1a03" Flags="#x0011" SyncMan="1">
+							<Entry Name="Input" Index="#x6030" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Channel 5" Index="#x1608" InOut="1" Flags="#x0011" SyncMan="0">
+							<Entry Name="Output" Index="#x7080" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Channel 6" Index="#x1609" InOut="1" Flags="#x0011" SyncMan="0">
+							<Entry Name="Output" Index="#x7090" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Channel 7" Index="#x160a" InOut="1" Flags="#x0011" SyncMan="0">
+							<Entry Name="Output" Index="#x70a0" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+						<Pdo Name="Channel 8" Index="#x160b" InOut="1" Flags="#x0011" SyncMan="0">
+							<Entry Name="Output" Index="#x70b0" Sub="#x01">
+								<Type>BIT</Type>
+							</Entry>
+						</Pdo>
+					</EtherCAT>
+				</Box>
+				<EtherCAT DeviceDesc="Ethernet (Intel(R) Ethernet Connection (4) I219-V)"/>
+			</Device>
+		</Io>
 	</Project>
+	<Mappings>
+		<OwnerA Name="TIPC^Test^Test Instance">
+			<OwnerB Name="TIID^Device 2 (EtherCAT)^Term 1 (EK1814)">
+				<Link VarA="PlcTask Inputs^GVL_Machine.HWIO.HWInput.PauseBtn" VarB="Channel 3^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_Machine.HWIO.HWInput.StartBtn" VarB="Channel 1^Input"/>
+				<Link VarA="PlcTask Inputs^GVL_Machine.HWIO.HWInput.StopBtn" VarB="Channel 2^Input"/>
+				<Link VarA="PlcTask Outputs^GVL_Machine.HWIO.HWOutput.Lamp01" VarB="Channel 5^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_Machine.HWIO.HWOutput.Lamp02" VarB="Channel 6^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_Machine.HWIO.HWOutput.Lamp03" VarB="Channel 7^Output"/>
+				<Link VarA="PlcTask Outputs^GVL_Machine.HWIO.HWOutput.Lamp04" VarB="Channel 8^Output"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
 </TcSmProject>
