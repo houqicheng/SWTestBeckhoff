@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMI_Winform", "HMI_Winform\HMI_Winform.csproj", "{82628FF6-12BD-4750-811A-A221AE4E5EAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82628FF6-12BD-4750-811A-A221AE4E5EAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82628FF6-12BD-4750-811A-A221AE4E5EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82628FF6-12BD-4750-811A-A221AE4E5EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82628FF6-12BD-4750-811A-A221AE4E5EAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7813ED05-438E-4D72-B92B-737FB8A60AA7}
+	EndGlobalSection
+EndGlobal
