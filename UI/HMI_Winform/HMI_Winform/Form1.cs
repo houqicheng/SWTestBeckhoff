@@ -13,9 +13,11 @@ namespace HMI_Winform
 {
     public partial class MainWindow : Form
     {
+        TcADS ads;
         public MainWindow()
         {
             InitializeComponent();
+             ads = new TcADS();
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -27,6 +29,15 @@ namespace HMI_Winform
             lblSetting.BackColor = Color.Empty;
             lblStart.BackColor = Color.Empty;
             lblStop.BackColor = Color.Empty;
+            //------connect to PLC----------------------------
+            ads.ConnectPLC();
+            //------connect to PLC----------------------------
+
+
+
+
+
+
         }
 
         private void lblHome_Click(object sender, EventArgs e)

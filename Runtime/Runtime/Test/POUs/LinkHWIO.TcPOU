@@ -19,17 +19,20 @@ GVL_SignalHanlding.fbHandleStartBtn.SetOutput();
 GVL_SignalHanlding.inPauseBtnHandling.SignalEnable(bSignalLocalEnable := (GVL_Machine.machineMode = MachineMode.Auto OR GVL_Machine.machineMode = MachineMode.Manual));
 GVL_SignalHanlding.inPauseBtnHandling.SetOutput();  *)
 
-
 GVL_SignalHanlding.inPauseBtnHandling.bSignalInput := GVL_Machine.HWIO.HWInput.PauseBtn  OR GVL_SignalHanlding.inPauseBtnHandling.bSignalOutput;
-														
-														 
-GVL_SignalHanlding.inPauseBtnHandling.SignalEnable(bSignalLocalEnable :=(GVL_Machine.machineMode = MachineMode.Auto));
-GVL_SignalHanlding.inPauseBtnHandling.SetOutput();  
-
-
-
-
+GVL_SignalHanlding.inPauseBtnHandling.SignalEnable(bSignalLocalEnable :=(GVL_Machine.machineMode = MachineMode.Auto) AND NOT GVL_Machine.HWIO.HWInput.StartBtn);
+GVL_SignalHanlding.inPauseBtnHandling.SetOutput(); 
 //==========Hardware signal inPause handle==========
+
+
+//==========Hardware signal inStop handle==========
+GVL_SignalHanlding.inStopBtnHandling.bSignalInput := GVL_Machine.HWIO.HWInput.StopBtn OR GVL_SignalHanlding.inStopBtnHandling.bSignalOutput;
+GVL_SignalHanlding.inStopBtnHandling.SignalEnable(bSignalLocalEnable := (GVL_Machine.machineMode = MachineMode.Auto) AND NOT GVL_Machine.HWIO.HWInput.StartBtn);
+GVL_SignalHanlding.inStopBtnHandling.SetOutput();
+//==========Hardware signal inStop handle==========
+
+
+
 ]]></ST>
     </Implementation>
     <LineIds Name="LinkHWIO">
@@ -41,11 +44,21 @@ GVL_SignalHanlding.inPauseBtnHandling.SetOutput();
       <LineId Id="24" Count="1" />
       <LineId Id="23" Count="0" />
       <LineId Id="16" Count="1" />
-      <LineId Id="27" Count="1" />
-      <LineId Id="33" Count="3" />
-      <LineId Id="29" Count="3" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="36" Count="0" />
       <LineId Id="26" Count="0" />
       <LineId Id="13" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="41" Count="0" />
       <LineId Id="12" Count="0" />
     </LineIds>
   </POU>

@@ -13,11 +13,12 @@ VAR_GLOBAL
 	//=====================UI Button=============================
 	
 	btemp		:BOOL;
+	
 	//=============Function Blcok instance===================
 	fbMarqueeExPause		:FB_MarqueeExPause:=(pLamp01:=ADR(GVL_Machine.HWIO.HWOutput.Lamp01),pLamp02:=ADR(GVL_Machine.HWIO.HWOutput.Lamp02),
 												pLamp03:=ADR(GVL_Machine.HWIO.HWOutput.Lamp03),pLamp04:=ADR(GVL_Machine.HWIO.HWOutput.Lamp04),
 												pTime:=ADR(GVL_General.tDelay),pPause:=ADR(GVL_SignalHanlding.inPauseBtnHandling.bSignalOutput),
-												pStop:=ADR(GVL_Machine.HWIO.HWInput.StopBtn));
+												pStop:=ADR(GVL_SignalHanlding.inStopBtnHandling.bSignalOutput));
 	
 	
 	

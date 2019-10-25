@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblStop = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblPause = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblStart = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblSetting = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -40,21 +46,15 @@
             this.lblHome = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.lblStart = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblPause = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lblStop = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -82,6 +82,63 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(859, 90);
             this.panel1.TabIndex = 0;
+            // 
+            // lblStop
+            // 
+            this.lblStop.BackColor = System.Drawing.Color.Green;
+            this.lblStop.Image = ((System.Drawing.Image)(resources.GetObject("lblStop.Image")));
+            this.lblStop.Location = new System.Drawing.Point(665, 6);
+            this.lblStop.Name = "lblStop";
+            this.lblStop.Size = new System.Drawing.Size(78, 59);
+            this.lblStop.TabIndex = 13;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.Location = new System.Drawing.Point(665, 65);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(39, 18);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Stop";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.Location = new System.Drawing.Point(555, 65);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 18);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Pause";
+            // 
+            // lblPause
+            // 
+            this.lblPause.BackColor = System.Drawing.Color.Green;
+            this.lblPause.Image = ((System.Drawing.Image)(resources.GetObject("lblPause.Image")));
+            this.lblPause.Location = new System.Drawing.Point(555, 6);
+            this.lblPause.Name = "lblPause";
+            this.lblPause.Size = new System.Drawing.Size(78, 59);
+            this.lblPause.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(445, 65);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 18);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Start";
+            // 
+            // lblStart
+            // 
+            this.lblStart.BackColor = System.Drawing.Color.Green;
+            this.lblStart.Image = ((System.Drawing.Image)(resources.GetObject("lblStart.Image")));
+            this.lblStart.Location = new System.Drawing.Point(445, 6);
+            this.lblStart.Name = "lblStart";
+            this.lblStart.Size = new System.Drawing.Size(78, 59);
+            this.lblStart.TabIndex = 8;
             // 
             // label8
             // 
@@ -185,82 +242,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "MainPage";
             // 
-            // tabPage2
+            // label2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(845, 487);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // lblStart
-            // 
-            this.lblStart.BackColor = System.Drawing.Color.Green;
-            this.lblStart.Image = ((System.Drawing.Image)(resources.GetObject("lblStart.Image")));
-            this.lblStart.Location = new System.Drawing.Point(445, 6);
-            this.lblStart.Name = "lblStart";
-            this.lblStart.Size = new System.Drawing.Size(78, 59);
-            this.lblStart.TabIndex = 8;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(445, 65);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 18);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Start";
-            // 
-            // lblPause
-            // 
-            this.lblPause.BackColor = System.Drawing.Color.Green;
-            this.lblPause.Image = ((System.Drawing.Image)(resources.GetObject("lblPause.Image")));
-            this.lblPause.Location = new System.Drawing.Point(555, 6);
-            this.lblPause.Name = "lblPause";
-            this.lblPause.Size = new System.Drawing.Size(78, 59);
-            this.lblPause.TabIndex = 10;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(555, 65);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(50, 18);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Pause";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label13.Location = new System.Drawing.Point(665, 65);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(39, 18);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "Stop";
-            // 
-            // lblStop
-            // 
-            this.lblStop.BackColor = System.Drawing.Color.Green;
-            this.lblStop.Image = ((System.Drawing.Image)(resources.GetObject("lblStop.Image")));
-            this.lblStop.Location = new System.Drawing.Point(665, 6);
-            this.lblStop.Name = "lblStop";
-            this.lblStop.Size = new System.Drawing.Size(78, 59);
-            this.lblStop.TabIndex = 13;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(845, 487);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(169, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Idle";
             // 
             // label1
             // 
@@ -272,15 +262,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Machine Mode:";
             // 
-            // label2
+            // tabPage2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(169, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Idle";
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(843, 628);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "IO Page";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(843, 628);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Log Page";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -297,25 +297,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mode Select";
             // 
-            // button1
+            // button4
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(10, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 72);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Auto";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(10, 110);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 72);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Manual";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(10, 270);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(146, 72);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Calib";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -327,15 +317,25 @@
             this.button3.Text = "Setting";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // button2
             // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(10, 270);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(146, 72);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Calib";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(10, 110);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(146, 72);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Manual";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(10, 30);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(146, 72);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Auto";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
