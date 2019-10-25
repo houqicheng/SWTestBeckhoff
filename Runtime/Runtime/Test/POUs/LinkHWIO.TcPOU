@@ -13,10 +13,22 @@ GVL_SignalHanlding.fbHandleStartBtn.SetOutput();
 
 
 //==========Hardware signal inPauseBtn handle==========
-GVL_SignalHanlding.inPauseBtnHandling.bSignalInput := ((GVL_Machine.HWIO.HWInput.PauseBtn OR GVL_SignalHanlding.fbPauseUI.bSignalOutput
+(*GVL_SignalHanlding.inPauseBtnHandling.bSignalInput := ((GVL_Machine.HWIO.HWInput.PauseBtn OR GVL_SignalHanlding.fbPauseUI.bSignalOutput
 														 OR GVL_SignalHanlding.inPauseBtnHandling.bSignalInput) AND NOT (GVL_Machine.HWIO.HWInput.StartBtn));
-GVL_SignalHanlding.inPauseBtnHandling.SignalEnable(bSignalLocalEnable := (GVL_Machine.machineMode = MachineMode.Auto));
-GVL_SignalHanlding.inPauseBtnHandling.SetOutput();
+														 
+GVL_SignalHanlding.inPauseBtnHandling.SignalEnable(bSignalLocalEnable := (GVL_Machine.machineMode = MachineMode.Auto OR GVL_Machine.machineMode = MachineMode.Manual));
+GVL_SignalHanlding.inPauseBtnHandling.SetOutput();  *)
+
+
+GVL_SignalHanlding.inPauseBtnHandling.bSignalInput := GVL_Machine.HWIO.HWInput.PauseBtn  OR GVL_SignalHanlding.inPauseBtnHandling.bSignalOutput;
+														
+														 
+GVL_SignalHanlding.inPauseBtnHandling.SignalEnable(bSignalLocalEnable :=(GVL_Machine.machineMode = MachineMode.Auto));
+GVL_SignalHanlding.inPauseBtnHandling.SetOutput();  
+
+
+
+
 //==========Hardware signal inPause handle==========
 ]]></ST>
     </Implementation>
@@ -26,9 +38,13 @@ GVL_SignalHanlding.inPauseBtnHandling.SetOutput();
       <LineId Id="7" Count="0" />
       <LineId Id="10" Count="1" />
       <LineId Id="8" Count="0" />
-      <LineId Id="14" Count="0" />
-      <LineId Id="18" Count="0" />
+      <LineId Id="24" Count="1" />
+      <LineId Id="23" Count="0" />
       <LineId Id="16" Count="1" />
+      <LineId Id="27" Count="1" />
+      <LineId Id="33" Count="3" />
+      <LineId Id="29" Count="3" />
+      <LineId Id="26" Count="0" />
       <LineId Id="13" Count="0" />
       <LineId Id="12" Count="0" />
     </LineIds>
