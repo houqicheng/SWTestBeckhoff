@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblStop = new System.Windows.Forms.Label();
@@ -46,6 +47,16 @@
             this.lblHome = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbLight03 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.label17 = new System.Windows.Forms.Label();
+            this.lbLight02 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lbLight01 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lbLight00 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -58,6 +69,7 @@
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,7 +185,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(115, 65);
+            this.label5.Location = new System.Drawing.Point(115, 66);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 18);
             this.label5.TabIndex = 4;
@@ -233,6 +245,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.MistyRose;
+            this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -241,6 +254,103 @@
             this.tabPage1.Size = new System.Drawing.Size(843, 628);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "MainPage";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.groupBox2.Controls.Add(this.lbLight03);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.lbLight02);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.lbLight01);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.lbLight00);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Location = new System.Drawing.Point(20, 81);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(209, 328);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Light Rolling";
+            // 
+            // lbLight03
+            // 
+            this.lbLight03.ImageIndex = 0;
+            this.lbLight03.ImageList = this.imageList1;
+            this.lbLight03.Location = new System.Drawing.Point(19, 259);
+            this.lbLight03.Name = "lbLight03";
+            this.lbLight03.Size = new System.Drawing.Size(60, 60);
+            this.lbLight03.TabIndex = 5;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "dot_red_96px.png");
+            this.imageList1.Images.SetKeyName(1, "dot_green_96px.png");
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(95, 278);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(55, 17);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Light04";
+            // 
+            // lbLight02
+            // 
+            this.lbLight02.ImageIndex = 0;
+            this.lbLight02.ImageList = this.imageList1;
+            this.lbLight02.Location = new System.Drawing.Point(19, 179);
+            this.lbLight02.Name = "lbLight02";
+            this.lbLight02.Size = new System.Drawing.Size(60, 60);
+            this.lbLight02.TabIndex = 4;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(95, 201);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(55, 17);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "Light03";
+            // 
+            // lbLight01
+            // 
+            this.lbLight01.ImageIndex = 0;
+            this.lbLight01.ImageList = this.imageList1;
+            this.lbLight01.Location = new System.Drawing.Point(19, 102);
+            this.lbLight01.Name = "lbLight01";
+            this.lbLight01.Size = new System.Drawing.Size(60, 60);
+            this.lbLight01.TabIndex = 3;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(85, 115);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(55, 17);
+            this.label15.TabIndex = 7;
+            this.label15.Text = "Light02";
+            // 
+            // lbLight00
+            // 
+            this.lbLight00.ImageIndex = 0;
+            this.lbLight00.ImageList = this.imageList1;
+            this.lbLight00.Location = new System.Drawing.Point(19, 33);
+            this.lbLight00.Name = "lbLight00";
+            this.lbLight00.Size = new System.Drawing.Size(60, 60);
+            this.lbLight00.TabIndex = 2;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(85, 55);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(55, 17);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "Light01";
             // 
             // label2
             // 
@@ -353,6 +463,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -386,6 +498,16 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbLight00;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lbLight03;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lbLight02;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lbLight01;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
     }
 }
 
