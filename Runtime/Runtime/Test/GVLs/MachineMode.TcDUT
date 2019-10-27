@@ -8,6 +8,8 @@ TYPE MachineMode :
 	Idle := 0,
 	Auto	:=1,
 	Manual	:=2,
+	Setting 	:=3,
+	Calibration	:=4,
 	Undefined	:=10
 );
 END_TYPE

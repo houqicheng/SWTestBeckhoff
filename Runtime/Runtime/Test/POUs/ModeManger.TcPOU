@@ -6,10 +6,56 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[GVL_Machine.machineMode := MachineMode.Auto;]]></ST>
+      <ST><![CDATA[IF GVL_Machine.ModeUI = 'auto' THEN 
+	GVL_Machine.machineMode := MachineMode.Auto;
+ELSIF GVL_Machine.ModeUI = 'manual' THEN 
+	GVL_Machine.machineMode := MachineMode.Manual;	
+ELSIF	GVL_Machine.ModeUI ='setting' THEN 
+	GVL_Machine.machineMode := MachineMode.Setting;
+ELSE
+	GVL_Machine.machineMode := MachineMode.Idle;
+END_IF
+
+
+//transer the machine mode to PLC Main page
+CASE GVL_Machine.machineMode OF
+	MachineMode.Auto:
+		GVL_Machine.ModePLC := 'Auto';
+	MachineMode.Manual:
+		GVL_Machine.ModePLC := 'Manual';	
+	MachineMode.Idle:
+		GVL_Machine.ModePLC := 'Idle';
+	MachineMode.Calibration:
+		GVL_Machine.ModePLC := 'Calibration';
+	MachineMode.Setting:
+		GVL_Machine.ModePLC := 'Setting';
+	MachineMode.Undefined:
+		GVL_Machine.ModePLC := 'Undefined';
+	
+END_CASE
+
+]]></ST>
     </Implementation>
     <LineIds Name="ModeManger">
-      <LineId Id="5" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="23" Count="1" />
+      <LineId Id="47" Count="1" />
+      <LineId Id="18" Count="1" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="37" Count="1" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="33" Count="2" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="43" Count="3" />
+      <LineId Id="39" Count="1" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="25" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

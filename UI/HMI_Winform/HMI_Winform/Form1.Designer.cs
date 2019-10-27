@@ -62,10 +62,10 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCalibMode = new System.Windows.Forms.Button();
+            this.btnSettingMode = new System.Windows.Forms.Button();
+            this.btnManualMode = new System.Windows.Forms.Button();
+            this.btnAutoMode = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -395,10 +395,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnCalibMode);
+            this.groupBox1.Controls.Add(this.btnSettingMode);
+            this.groupBox1.Controls.Add(this.btnManualMode);
+            this.groupBox1.Controls.Add(this.btnAutoMode);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox1.Location = new System.Drawing.Point(865, 393);
             this.groupBox1.Name = "groupBox1";
@@ -407,45 +407,49 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mode Select";
             // 
-            // button4
+            // btnCalibMode
             // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(10, 270);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(146, 72);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Calib";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnCalibMode.Image = ((System.Drawing.Image)(resources.GetObject("btnCalibMode.Image")));
+            this.btnCalibMode.Location = new System.Drawing.Point(10, 270);
+            this.btnCalibMode.Name = "btnCalibMode";
+            this.btnCalibMode.Size = new System.Drawing.Size(146, 72);
+            this.btnCalibMode.TabIndex = 3;
+            this.btnCalibMode.Text = "Calib";
+            this.btnCalibMode.UseVisualStyleBackColor = true;
+            this.btnCalibMode.Click += new System.EventHandler(this.btnCalibMode_Click);
             // 
-            // button3
+            // btnSettingMode
             // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(10, 190);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(146, 72);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Setting";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSettingMode.Image = ((System.Drawing.Image)(resources.GetObject("btnSettingMode.Image")));
+            this.btnSettingMode.Location = new System.Drawing.Point(10, 190);
+            this.btnSettingMode.Name = "btnSettingMode";
+            this.btnSettingMode.Size = new System.Drawing.Size(146, 72);
+            this.btnSettingMode.TabIndex = 2;
+            this.btnSettingMode.Text = "Setting";
+            this.btnSettingMode.UseVisualStyleBackColor = true;
+            this.btnSettingMode.Click += new System.EventHandler(this.btnSettingMode_Click);
             // 
-            // button2
+            // btnManualMode
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(10, 110);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 72);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Manual";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnManualMode.Image = ((System.Drawing.Image)(resources.GetObject("btnManualMode.Image")));
+            this.btnManualMode.Location = new System.Drawing.Point(10, 110);
+            this.btnManualMode.Name = "btnManualMode";
+            this.btnManualMode.Size = new System.Drawing.Size(146, 72);
+            this.btnManualMode.TabIndex = 1;
+            this.btnManualMode.Text = "Manual";
+            this.btnManualMode.UseVisualStyleBackColor = true;
+            this.btnManualMode.Click += new System.EventHandler(this.btnManualMode_Click);
             // 
-            // button1
+            // btnAutoMode
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(10, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 72);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Auto";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAutoMode.Image = ((System.Drawing.Image)(resources.GetObject("btnAutoMode.Image")));
+            this.btnAutoMode.Location = new System.Drawing.Point(10, 30);
+            this.btnAutoMode.Name = "btnAutoMode";
+            this.btnAutoMode.Size = new System.Drawing.Size(146, 72);
+            this.btnAutoMode.TabIndex = 0;
+            this.btnAutoMode.Text = "Auto";
+            this.btnAutoMode.UseVisualStyleBackColor = true;
+            this.btnAutoMode.Click += new System.EventHandler(this.btnAutoMode_Click);
             // 
             // MainWindow
             // 
@@ -457,6 +461,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "MainWindow";
             this.Text = "Main Window";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -494,10 +499,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCalibMode;
+        private System.Windows.Forms.Button btnSettingMode;
+        private System.Windows.Forms.Button btnManualMode;
+        private System.Windows.Forms.Button btnAutoMode;
         private System.Windows.Forms.Label lbLight00;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.GroupBox groupBox2;

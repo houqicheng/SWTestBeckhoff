@@ -4,7 +4,13 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
 	HWIO		:HardWareIO;
+	
+	
 	machineMode			:MachineMode;
+	ModeUI				:STRING;
+	ModePLC				:STRING;
+	
+	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
