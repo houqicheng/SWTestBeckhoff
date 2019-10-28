@@ -8,7 +8,7 @@ VAR_GLOBAL
 	
 	machineMode			:MachineMode;
 	ModeUI				:STRING;
-	ModePLC				:STRING;
+	ModePLC				:STRING(15);
 	
 	
 END_VAR]]></Declaration>

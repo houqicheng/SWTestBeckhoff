@@ -6,12 +6,14 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF GVL_Machine.ModeUI = 'auto' THEN 
+      <ST><![CDATA[IF GVL_Machine.ModeUI = 'Auto' THEN 
 	GVL_Machine.machineMode := MachineMode.Auto;
-ELSIF GVL_Machine.ModeUI = 'manual' THEN 
+ELSIF GVL_Machine.ModeUI = 'Manual' THEN 
 	GVL_Machine.machineMode := MachineMode.Manual;	
-ELSIF	GVL_Machine.ModeUI ='setting' THEN 
+ELSIF	GVL_Machine.ModeUI ='Setting' THEN 
 	GVL_Machine.machineMode := MachineMode.Setting;
+ELSIF GVL_Machine.ModeUI = 'Calibration' THEN 
+	GVL_Machine.machineMode := MachineMode.Calibration;
 ELSE
 	GVL_Machine.machineMode := MachineMode.Idle;
 END_IF
@@ -30,8 +32,7 @@ CASE GVL_Machine.machineMode OF
 	MachineMode.Setting:
 		GVL_Machine.ModePLC := 'Setting';
 	MachineMode.Undefined:
-		GVL_Machine.ModePLC := 'Undefined';
-	
+		GVL_Machine.ModePLC := 'Undefined';	
 END_CASE
 
 ]]></ST>
@@ -41,6 +42,7 @@ END_CASE
       <LineId Id="15" Count="0" />
       <LineId Id="23" Count="1" />
       <LineId Id="47" Count="1" />
+      <LineId Id="52" Count="1" />
       <LineId Id="18" Count="1" />
       <LineId Id="16" Count="0" />
       <LineId Id="37" Count="1" />
@@ -52,7 +54,6 @@ END_CASE
       <LineId Id="36" Count="0" />
       <LineId Id="43" Count="3" />
       <LineId Id="39" Count="1" />
-      <LineId Id="42" Count="0" />
       <LineId Id="31" Count="0" />
       <LineId Id="27" Count="0" />
       <LineId Id="25" Count="0" />

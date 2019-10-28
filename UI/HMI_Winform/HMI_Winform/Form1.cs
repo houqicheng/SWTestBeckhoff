@@ -23,16 +23,21 @@ namespace HMI_Winform
         //----------try to read Lamp status to UI------------
 
         //-------------mode--------------------
-        //write mode to PLC
+        //write mode to PLC------------
         int hModeUI = 0;
-        AdsStream modeStream = new AdsStream(30);
-        BinaryWriter modeWrite;
+        AdsStream modeStream;
+        AdsBinaryWriter adsWriter;
         string strMode = "Idle";
 
-        //read PLC mode
-        int hModePLC;
+        //read PLC mode from PLC--------------
+        int hModePLC=0;
 
         //-------------------------------------
+        //---------ui variable handle-----------
+        int hStartUI;
+        int hPauseUI;
+        int hStopUI;
+        //---------ui variable handle-----------
 
         public MainWindow()
         {
@@ -65,25 +70,43 @@ namespace HMI_Winform
             }           
             client.AdsNotification += Lamp_AdsNotification;
         }
+        public void ReadModeStr()
+        {
+           hModePLC =  client.AddDeviceNotificationEx("GVL_Machine.ModePLC", AdsTransMode.OnChange, 100, 0,lbMode,typeof(string),new int[] {15});
+            client.AdsNotificationEx += Client_AdsNotificationEx;
+        }
+
+        private void Client_AdsNotificationEx(object sender, AdsNotificationExEventArgs e)
+        {
+            //throw new NotImplementedException();
+            lbMode.Text = e.Value.ToString();
+        }
+
+      
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            //CheckForIllegalCrossThreadCalls = false;
+            CheckForIllegalCrossThreadCalls = false;
             //------connect to PLC---------------------------- 
             client = new TcAdsClient();
             client.Connect(851);
             //------connect to PLC---------------------------- 
 
             //------label and button background initilize---------------------------- 
-            ControlInit();
-             
+            ControlInit();             
 
             //------Read lamp status to HMI Main page---------------------------- 
             ReadLamp();
 
             //-------------mode select------------------            
             hModeUI = client.CreateVariableHandle("GVL_Machine.ModeUI");
-            
+
+            ReadModeStr();
+
+
+            hStartUI = client.CreateVariableHandle("GVL_General.bStartBtnUI");
+            hPauseUI = client.CreateVariableHandle("GVL_General.bPauseBtnUI");
+            hStopUI = client.CreateVariableHandle("GVL_General.bStopBtnUI");
         }
         private void Lamp_AdsNotification(object sender, AdsNotificationEventArgs e)
         {
@@ -211,8 +234,7 @@ namespace HMI_Winform
                 //2,再有binarywriter.write
                 //3,再有clien.write()
                 //---------把字符串分解成char 在写入plc -------               
-                //modeWrite = new BinaryWriter(modeStream);
-                //strMode = "auto";
+                //modeWrite = new BinaryWriter(modeStream);               
                 //modeWrite.Write(strMode.ToCharArray());
                 //client.Write(hModeUI, modeStream);
                 //---------把字符串分解成char 在写入plc
@@ -220,9 +242,10 @@ namespace HMI_Winform
 
                 //From version 1.0.0.10 and higher the classes AdsBinaryReader and AdsBinaryWriter
                 // can be used to read and write strings
-                //---------用字符串的方式写入---------------                
-                //modeStream = new AdsStream(5);
-                AdsBinaryWriter adsWriter = new AdsBinaryWriter(modeStream);
+                //---------用字符串的方式写入--------------- 
+                strMode = "Auto";
+                modeStream = new AdsStream(30);
+                adsWriter = new AdsBinaryWriter(modeStream);
                 adsWriter.WritePlcString(strMode, 30, Encoding.ASCII);
                 client.Write(hModeUI, modeStream);
                 //-----------可以使用的------------
@@ -240,13 +263,13 @@ namespace HMI_Winform
 
         private void btnManualMode_Click(object sender, EventArgs e)
         {
-            strMode = "manual";
-            //modeStream = new AdsStream(7);            
-            AdsBinaryWriter adsWriter = new AdsBinaryWriter(modeStream);
+            strMode = "Manual";
+            modeStream = new AdsStream(30);
+            adsWriter = new AdsBinaryWriter(modeStream);
             try
             {
                 adsWriter.WritePlcString(strMode, 30,Encoding.ASCII);
-                client.Write(hModeUI, adsStreamLamp);
+                client.Write(hModeUI, modeStream);
             }
             catch (Exception err)
             {
@@ -260,12 +283,13 @@ namespace HMI_Winform
 
         private void btnSettingMode_Click(object sender, EventArgs e)
         {
-            strMode = "setting";            
-            AdsBinaryWriter adsWriter = new AdsBinaryWriter(modeStream);
+            strMode = "Setting";  
+            modeStream = new AdsStream(30);
+            adsWriter = new AdsBinaryWriter(modeStream);
             try
-            { l
+            { 
                 adsWriter.WritePlcString(strMode, 30, Encoding.ASCII);
-                client.Write(hModeUI, adsStreamLamp);
+                client.Write(hModeUI, modeStream);
             }
             catch (Exception err)
             {
@@ -279,10 +303,82 @@ namespace HMI_Winform
 
         private void btnCalibMode_Click(object sender, EventArgs e)
         {
+            modeStream = new AdsStream(30);
+            adsWriter = new AdsBinaryWriter(modeStream);
+            strMode = "Calibration";
+            try
+            {
+                adsWriter.WritePlcAnsiString(strMode, 30);
+                client.Write(hModeUI, modeStream);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Try to write Calibration to PLC: " + err.Message);
+            }
             btnAutoMode.BackColor = Color.Empty;
             btnCalibMode.BackColor = Color.Green;
             btnManualMode.BackColor = Color.Empty;
             btnSettingMode.BackColor = Color.Empty;
+        }
+
+        private void lblStart_Click(object sender, EventArgs e)
+        {
+            //
+            AdsStream btnStream = new AdsStream(1);
+            AdsBinaryWriter btnWriter = new AdsBinaryWriter(btnStream);
+            try
+            {
+                btnWriter.Write(true);
+                client.Write(hStartUI, btnStream);
+
+                //------adsClient的WriteAny方法
+                client.WriteAny(hPauseUI, false);
+                client.WriteAny(hStopUI, false);
+                //------adsClient的WriteAny方法
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("write start value to PLC: " + err.Message);
+            }
+            lblPause.BackColor = Color.Empty;
+            lblStart.BackColor = Color.Green;
+            lblStop.BackColor = Color.Empty;
+        }
+
+        private void lblPause_Click(object sender, EventArgs e)
+        {
+            //using writeany
+            try
+            {
+                client.WriteAny(hPauseUI, true);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("try to write pause to PLC: " + err.Message);                
+            }
+            lblPause.BackColor = Color.Green;
+            lblStart.BackColor = Color.Empty;
+            lblStop.BackColor = Color.Empty;
+        }
+
+        private void lblStop_Click(object sender, EventArgs e)
+        {
+            lblPause.BackColor = Color.Empty;
+            lblStart.BackColor = Color.Empty;
+            lblStop.BackColor = Color.Green;
+            // 用sample03, adsbinaryWriter and adsstream 方法
+            AdsStream stopStream = new AdsStream(1);
+            AdsBinaryWriter stopWriter = new AdsBinaryWriter(stopStream);
+            try
+            {
+                stopWriter.Write(true);
+                client.Write(hStopUI, stopStream);
+                client.WriteAny(hPauseUI, false);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("write stop to PLC: " + err.Message);
+            }
         }
     }
 }
