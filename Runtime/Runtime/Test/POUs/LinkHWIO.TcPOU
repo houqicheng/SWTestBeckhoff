@@ -19,8 +19,8 @@ GVL_SignalHanlding.fbHandleStartBtn.SetOutput();
 GVL_SignalHanlding.inPauseBtnHandling.SignalEnable(bSignalLocalEnable := (GVL_Machine.machineMode = MachineMode.Auto OR GVL_Machine.machineMode = MachineMode.Manual));
 GVL_SignalHanlding.inPauseBtnHandling.SetOutput();  *)
 
-GVL_SignalHanlding.inPauseBtnHandling.bSignalInput := GVL_Machine.HWIO.HWInput.PauseBtn  OR GVL_SignalHanlding.inPauseBtnHandling.bSignalOutput;
-GVL_SignalHanlding.inPauseBtnHandling.SignalEnable(bSignalLocalEnable :=(GVL_Machine.machineMode = MachineMode.Auto) AND NOT GVL_Machine.HWIO.HWInput.StartBtn);
+GVL_SignalHanlding.inPauseBtnHandling.bSignalInput := GVL_Machine.HWIO.HWInput.PauseBtn  OR GVL_SignalHanlding.inPauseBtnHandling.bSignalOutput OR GVL_SignalHanlding.fbPauseUI.bSignalOutput;
+GVL_SignalHanlding.inPauseBtnHandling.SignalEnable(bSignalLocalEnable :=(GVL_Machine.machineMode = MachineMode.Auto) AND NOT GVL_Machine.HWIO.HWInput.StartBtn  AND NOT (GVL_General.bStartBtnUI));
 GVL_SignalHanlding.inPauseBtnHandling.SetOutput(); 
 //==========Hardware signal inPause handle==========
 //GVL_General.bStartBtnUI

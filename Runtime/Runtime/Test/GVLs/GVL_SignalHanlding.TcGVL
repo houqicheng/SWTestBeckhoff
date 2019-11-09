@@ -6,6 +6,7 @@ VAR_GLOBAL
 	
 	//fbPauseUI		:FB_SignalHandling :=(bSignalInput:= GVL_General.bPauseBtnUI);   cannot assigned the signal here.
 	fbPauseUI		:FB_SignalHandling;
+	fbStartUI		:FB_SignalHandling;
 	
 	fbHandleStartBtn		:FB_SignalHandling;
 	inPauseBtnHandling		:FB_SignalHandling;

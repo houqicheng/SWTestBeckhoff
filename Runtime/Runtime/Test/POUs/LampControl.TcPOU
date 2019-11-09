@@ -11,7 +11,7 @@ END_VAR
 //==========call the "Blinking" method ================================
 //GVL_General.fbMarqueeExPause.Blinking(bStart:=GVL_Machine.HWIO.HWInput.StartBtn OR GVL_General.bStartBtnUI );
 
-GVL_General.fbMarqueeExPause.Blinking(bStart:=GVL_SignalHanlding.fbHandleStartBtn.bSignalOutput OR GVL_General.bStartBtnUI );
+GVL_General.fbMarqueeExPause.Blinking(bStart:=GVL_SignalHanlding.fbHandleStartBtn.bSignalOutput OR GVL_SignalHanlding.fbStartUI.bSignalOutput);
 
 
 ]]></ST>

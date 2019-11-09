@@ -335,6 +335,9 @@ namespace HMI_Winform
                 client.WriteAny(hPauseUI, false);
                 client.WriteAny(hStopUI, false);
                 //------adsClient的WriteAny方法
+                Thread.Sleep(100);
+                client.WriteAny(hStartUI, false);
+               
             }
             catch (Exception err)
             {
