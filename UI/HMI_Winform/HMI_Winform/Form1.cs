@@ -376,7 +376,8 @@ namespace HMI_Winform
             {
                 stopWriter.Write(true);
                 client.Write(hStopUI, stopStream);
-                client.WriteAny(hPauseUI, false);
+                client.WriteAny(hPauseUI, false);               
+
             }
             catch (Exception err)
             {

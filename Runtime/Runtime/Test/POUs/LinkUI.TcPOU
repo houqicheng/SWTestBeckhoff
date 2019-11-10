@@ -18,8 +18,17 @@ END_VAR
 	GVL_SignalHanlding.fbPauseUI.bSignalInput := GVL_General.bPauseBtnUI;
 	GVL_SignalHanlding.fbPauseUI.SignalEnable(bSignalLocalEnable := (GVL_Machine.machineMode = MachineMode.Auto) AND NOT GVL_General.bStartBtnUI);
 	GVL_SignalHanlding.fbPauseUI.SetOutput();
+//Note the PauseUI siginal need to be combined with the HW stop button at LinkHWIO program
 //==================Pause button from UI================================
+	
 
+//==================Pause button from UI================================
+	GVL_SignalHanlding.fbStopUI.bSignalInput := GVL_General.bStopBtnUI;
+	GVL_SignalHanlding.fbStopUI.SignalEnable(bSignalLocalEnable := GVL_Machine.machineMode = MachineMode.Auto
+											 AND NOT GVL_General.bStartBtnUI);
+	GVL_SignalHanlding.fbStopUI.SetOutput();
+//Note the StopUI siginal need to be combined with the HW stop button at LinkHWIO program								 
+//==================Pause button from UI================================
 
 
 
@@ -37,7 +46,13 @@ END_VAR
       <LineId Id="15" Count="0" />
       <LineId Id="29" Count="0" />
       <LineId Id="31" Count="0" />
+      <LineId Id="76" Count="0" />
       <LineId Id="36" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="72" Count="3" />
       <LineId Id="30" Count="0" />
       <LineId Id="28" Count="0" />
       <LineId Id="27" Count="0" />
