@@ -384,5 +384,15 @@ namespace HMI_Winform
                 MessageBox.Show("write stop to PLC: " + err.Message);
             }
         }
+
+        private void lblLamp01UI_Click(object sender, EventArgs e)
+        {
+            //use mouse down/up to write to PLC Lamp
+        }
+
+        private void lblLamp01UI_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }
