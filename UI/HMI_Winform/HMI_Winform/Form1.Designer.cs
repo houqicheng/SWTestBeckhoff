@@ -70,18 +70,18 @@
             this.lblLamp03UI = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.lblPauseIOPage = new System.Windows.Forms.Label();
+            this.lblStopIOPage = new System.Windows.Forms.Label();
+            this.lblStartIOPage = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnCalibMode = new System.Windows.Forms.Button();
             this.btnSettingMode = new System.Windows.Forms.Button();
             this.btnManualMode = new System.Windows.Forms.Button();
             this.btnAutoMode = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -504,15 +504,69 @@
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.label25);
             this.groupBox3.Controls.Add(this.label24);
-            this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Controls.Add(this.label22);
-            this.groupBox3.Controls.Add(this.label21);
+            this.groupBox3.Controls.Add(this.lblPauseIOPage);
+            this.groupBox3.Controls.Add(this.lblStopIOPage);
+            this.groupBox3.Controls.Add(this.lblStartIOPage);
             this.groupBox3.Location = new System.Drawing.Point(6, 27);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(196, 366);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Input";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(74, 182);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(37, 17);
+            this.label26.TabIndex = 5;
+            this.label26.Text = "Stop";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(72, 114);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(48, 17);
+            this.label25.TabIndex = 4;
+            this.label25.Text = "Pause";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(72, 54);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(38, 17);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "Start";
+            // 
+            // lblPauseIOPage
+            // 
+            this.lblPauseIOPage.ImageIndex = 0;
+            this.lblPauseIOPage.ImageList = this.imageList1;
+            this.lblPauseIOPage.Location = new System.Drawing.Point(6, 92);
+            this.lblPauseIOPage.Name = "lblPauseIOPage";
+            this.lblPauseIOPage.Size = new System.Drawing.Size(60, 60);
+            this.lblPauseIOPage.TabIndex = 2;
+            // 
+            // lblStopIOPage
+            // 
+            this.lblStopIOPage.ImageIndex = 0;
+            this.lblStopIOPage.ImageList = this.imageList1;
+            this.lblStopIOPage.Location = new System.Drawing.Point(6, 161);
+            this.lblStopIOPage.Name = "lblStopIOPage";
+            this.lblStopIOPage.Size = new System.Drawing.Size(60, 60);
+            this.lblStopIOPage.TabIndex = 1;
+            // 
+            // lblStartIOPage
+            // 
+            this.lblStartIOPage.ImageIndex = 0;
+            this.lblStartIOPage.ImageList = this.imageList1;
+            this.lblStartIOPage.Location = new System.Drawing.Point(6, 32);
+            this.lblStartIOPage.Name = "lblStartIOPage";
+            this.lblStartIOPage.Size = new System.Drawing.Size(60, 60);
+            this.lblStartIOPage.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -582,60 +636,6 @@
             this.btnAutoMode.Text = "Auto";
             this.btnAutoMode.UseVisualStyleBackColor = true;
             this.btnAutoMode.Click += new System.EventHandler(this.btnAutoMode_Click);
-            // 
-            // label21
-            // 
-            this.label21.ImageIndex = 0;
-            this.label21.ImageList = this.imageList1;
-            this.label21.Location = new System.Drawing.Point(6, 32);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(60, 60);
-            this.label21.TabIndex = 0;
-            // 
-            // label22
-            // 
-            this.label22.ImageIndex = 0;
-            this.label22.ImageList = this.imageList1;
-            this.label22.Location = new System.Drawing.Point(6, 161);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(60, 60);
-            this.label22.TabIndex = 1;
-            // 
-            // label23
-            // 
-            this.label23.ImageIndex = 0;
-            this.label23.ImageList = this.imageList1;
-            this.label23.Location = new System.Drawing.Point(6, 92);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(60, 60);
-            this.label23.TabIndex = 2;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(72, 54);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(38, 17);
-            this.label24.TabIndex = 3;
-            this.label24.Text = "Start";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(72, 114);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(48, 17);
-            this.label25.TabIndex = 4;
-            this.label25.Text = "Pause";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(74, 182);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(37, 17);
-            this.label26.TabIndex = 5;
-            this.label26.Text = "Stop";
             // 
             // MainWindow
             // 
@@ -717,9 +717,9 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lblPauseIOPage;
+        private System.Windows.Forms.Label lblStopIOPage;
+        private System.Windows.Forms.Label lblStartIOPage;
     }
 }
 

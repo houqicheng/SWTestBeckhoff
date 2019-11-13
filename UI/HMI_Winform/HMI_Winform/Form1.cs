@@ -38,6 +38,10 @@ namespace HMI_Winform
         int hPauseUI;
         int hStopUI;
         //---------ui variable handle-----------
+        //---------ui Notification handle-----------
+        int hStartUINo;
+        //---------ui Notification handle-----------
+
 
         public MainWindow()
         {
@@ -73,17 +77,18 @@ namespace HMI_Winform
         public void ReadModeStr()
         {
            hModePLC =  client.AddDeviceNotificationEx("GVL_Machine.ModePLC", AdsTransMode.OnChange, 100, 0,lbMode,typeof(string),new int[] {15});
-            client.AdsNotificationEx += Client_AdsNotificationEx;
+           client.AdsNotificationEx += Client_AdsNotificationEx;
         }
 
         private void Client_AdsNotificationEx(object sender, AdsNotificationExEventArgs e)
         {
             //throw new NotImplementedException();
-            lbMode.Text = e.Value.ToString();
+            Type type = e.Value.GetType();
+            if (type == typeof(string))
+            {
+                lbMode.Text = e.Value.ToString();
+            }
         }
-
-      
-
         private void MainWindow_Load(object sender, EventArgs e)
         {
             CheckForIllegalCrossThreadCalls = false;
@@ -107,7 +112,30 @@ namespace HMI_Winform
             hStartUI = client.CreateVariableHandle("GVL_General.bStartBtnUI");
             hPauseUI = client.CreateVariableHandle("GVL_General.bPauseBtnUI");
             hStopUI = client.CreateVariableHandle("GVL_General.bStopBtnUI");
+            hStartUINo = client.AddDeviceNotificationEx("GVL_General.bStartBtnUI", AdsTransMode.OnChange, 100, 0, lblStartIOPage, typeof(bool));
+            client.AddDeviceNotificationEx("GVL_General.bPauseBtnUI", AdsTransMode.OnChange, 100, 0, lblPauseIOPage, typeof(bool));
+            client.AddDeviceNotificationEx("GVL_General.bStopBtnUI", AdsTransMode.OnChange, 100, 0, lblStopIOPage, typeof(bool));
+            client.AdsNotificationEx += UIBtnFeedBackfromPLC_AdsNotificationEx;
+
         }
+
+        private void UIBtnFeedBackfromPLC_AdsNotificationEx(object sender, AdsNotificationExEventArgs e)
+        {
+            //throw new NotImplementedException();
+            if (e.NotificationHandle == hStartUINo)
+            {
+                if (e.Value.ToString() == true.ToString())
+                {
+                    ((Label)e.UserData).ImageIndex = 1;
+                }
+                else
+                {
+                    ((Label)e.UserData).ImageIndex = 0;
+                }
+            }
+            
+        }
+
         private void Lamp_AdsNotification(object sender, AdsNotificationEventArgs e)
         {
             e.DataStream.Position = e.Offset;
