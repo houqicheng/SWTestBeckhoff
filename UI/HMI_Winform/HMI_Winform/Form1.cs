@@ -40,6 +40,8 @@ namespace HMI_Winform
         //---------ui variable handle-----------
         //---------ui Notification handle-----------
         int hStartUINo;
+        int hPauseUINo;
+        int hStopUINo;
         //---------ui Notification handle-----------
 
 
@@ -113,8 +115,8 @@ namespace HMI_Winform
             hPauseUI = client.CreateVariableHandle("GVL_General.bPauseBtnUI");
             hStopUI = client.CreateVariableHandle("GVL_General.bStopBtnUI");
             hStartUINo = client.AddDeviceNotificationEx("GVL_General.bStartBtnUI", AdsTransMode.OnChange, 100, 0, lblStartIOPage, typeof(bool));
-            client.AddDeviceNotificationEx("GVL_General.bPauseBtnUI", AdsTransMode.OnChange, 100, 0, lblPauseIOPage, typeof(bool));
-            client.AddDeviceNotificationEx("GVL_General.bStopBtnUI", AdsTransMode.OnChange, 100, 0, lblStopIOPage, typeof(bool));
+            hPauseUINo = client.AddDeviceNotificationEx("GVL_General.bPauseBtnUI", AdsTransMode.OnChange, 100, 0, lblPauseIOPage, typeof(bool));
+            hStopUINo = client.AddDeviceNotificationEx("GVL_General.bStopBtnUI", AdsTransMode.OnChange, 100, 0, lblStopIOPage, typeof(bool));
             client.AdsNotificationEx += UIBtnFeedBackfromPLC_AdsNotificationEx;
 
         }
@@ -133,7 +135,28 @@ namespace HMI_Winform
                     ((Label)e.UserData).ImageIndex = 0;
                 }
             }
-            
+            else if (e.NotificationHandle == hPauseUINo)
+            {
+                if (e.Value.ToString() == true.ToString())
+                {
+                    ((Label)e.UserData).ImageIndex = 1;
+                }
+                else
+                {
+                    ((Label)e.UserData).ImageIndex = 0;
+                }
+            }
+            else if (e.NotificationHandle == hStopUINo)
+            {
+                if (e.Value.ToString() == true.ToString())
+                {
+                    ((Label)e.UserData).ImageIndex = 1;
+                }
+                else
+                {
+                    ((Label)e.UserData).ImageIndex = 0;
+                }
+            }
         }
 
         private void Lamp_AdsNotification(object sender, AdsNotificationEventArgs e)
