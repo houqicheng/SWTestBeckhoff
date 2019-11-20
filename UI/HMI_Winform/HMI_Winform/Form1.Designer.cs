@@ -82,6 +82,7 @@
             this.btnSettingMode = new System.Windows.Forms.Button();
             this.btnManualMode = new System.Windows.Forms.Button();
             this.btnAutoMode = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -89,7 +90,9 @@
             this.tabPage2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -571,6 +574,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Beige;
+            this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -637,6 +641,15 @@
             this.btnAutoMode.UseVisualStyleBackColor = true;
             this.btnAutoMode.Click += new System.EventHandler(this.btnAutoMode_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(21, 18);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(754, 435);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -661,7 +674,9 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -720,6 +735,7 @@
         private System.Windows.Forms.Label lblPauseIOPage;
         private System.Windows.Forms.Label lblStopIOPage;
         private System.Windows.Forms.Label lblStartIOPage;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

@@ -48,6 +48,7 @@ namespace HMI_Winform
         public MainWindow()
         {
             InitializeComponent();
+           
         }
         private void ControlInit()
         {
@@ -93,6 +94,11 @@ namespace HMI_Winform
         }
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            dataGridView1.Columns.Add("Time","Time");
+            dataGridView1.Columns.Add("Action","Action");
+
+
+
             CheckForIllegalCrossThreadCalls = false;
             //------connect to PLC---------------------------- 
             client = new TcAdsClient();
@@ -120,7 +126,19 @@ namespace HMI_Winform
             client.AdsNotificationEx += UIBtnFeedBackfromPLC_AdsNotificationEx;
 
         }
-
+        #region
+        //add log to logpage
+        private void RecordLog(string message)
+        {
+           int rowIdx = dataGridView1.Rows.Add();
+            dataGridView1.Rows[rowIdx].Cells[0].Value = DateTime.Now.ToString();
+            dataGridView1.Rows[rowIdx].Cells[1].Value = message;
+        }
+        private void WriteLog(string message)
+        {
+            this.Invoke(new Action<string>(RecordLog), message);
+        }
+        #endregion
         private void UIBtnFeedBackfromPLC_AdsNotificationEx(object sender, AdsNotificationExEventArgs e)
         {
             //throw new NotImplementedException();
