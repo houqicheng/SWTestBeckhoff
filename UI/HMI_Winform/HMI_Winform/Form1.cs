@@ -47,8 +47,7 @@ namespace HMI_Winform
 
         public MainWindow()
         {
-            InitializeComponent();
-           
+            InitializeComponent(); 
         }
         private void ControlInit()
         {
@@ -96,8 +95,9 @@ namespace HMI_Winform
         {
             dataGridView1.Columns.Add("Time","Time");
             dataGridView1.Columns.Add("Action","Action");
-
-
+            dataGridView1.Columns[0].Width = 50;
+            dataGridView1.Columns[1].Width = 90;
+            
 
             CheckForIllegalCrossThreadCalls = false;
             //------connect to PLC---------------------------- 
@@ -130,8 +130,18 @@ namespace HMI_Winform
         //add log to logpage
         private void RecordLog(string message)
         {
-           int rowIdx = dataGridView1.Rows.Add();
-            dataGridView1.Rows[rowIdx].Cells[0].Value = DateTime.Now.ToString();
+
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            {
+                dataGridView1.AutoResizeColumn(i, DataGridViewAutoSizeColumnMode.AllCells);
+            }
+            if (dataGridView1.Rows.Count >= 20)
+            {
+                dataGridView1.Rows.RemoveAt(0);
+            }
+
+            int rowIdx = dataGridView1.Rows.Add();
+            dataGridView1.Rows[rowIdx].Cells[0].Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             dataGridView1.Rows[rowIdx].Cells[1].Value = message;
         }
         private void WriteLog(string message)
@@ -254,7 +264,7 @@ namespace HMI_Winform
 
         private void lblHome_Click(object sender, EventArgs e)
         {
-
+            WriteLog("Enter Main page");
             lblHome.BackColor = Color.Green;
             lblIO.BackColor = Color.Empty;
             lblLog.BackColor = Color.Empty;
@@ -263,6 +273,7 @@ namespace HMI_Winform
 
         private void lblIO_Click(object sender, EventArgs e)
         {
+            WriteLog("Enter IO page");
             lblIO.BackColor = Color.Green;
             lblLog.BackColor = Color.Empty;
             lblHome.BackColor = Color.Empty;
@@ -272,6 +283,7 @@ namespace HMI_Winform
 
         private void lblLog_Click(object sender, EventArgs e)
         {
+            WriteLog("Enter Log page");
             lblLog.BackColor = Color.Green;
             lblHome.BackColor = Color.Empty;
             lblIO.BackColor = Color.Empty;
@@ -298,6 +310,7 @@ namespace HMI_Winform
         {
             try
             {
+                WriteLog("Auto mode Btn click");
                 //lenght of the stream = length of string + 1
                 //1,先有adsstream,
                 //2,再有binarywriter.write
@@ -332,6 +345,7 @@ namespace HMI_Winform
 
         private void btnManualMode_Click(object sender, EventArgs e)
         {
+            WriteLog("Manual mode Btn click");
             strMode = "Manual";
             modeStream = new AdsStream(30);
             adsWriter = new AdsBinaryWriter(modeStream);
@@ -352,6 +366,7 @@ namespace HMI_Winform
 
         private void btnSettingMode_Click(object sender, EventArgs e)
         {
+            WriteLog("Setting mode Btn click");
             strMode = "Setting";  
             modeStream = new AdsStream(30);
             adsWriter = new AdsBinaryWriter(modeStream);
@@ -372,6 +387,7 @@ namespace HMI_Winform
 
         private void btnCalibMode_Click(object sender, EventArgs e)
         {
+            WriteLog("Calibration mode Btn click");
             modeStream = new AdsStream(30);
             adsWriter = new AdsBinaryWriter(modeStream);
             strMode = "Calibration";
@@ -392,6 +408,7 @@ namespace HMI_Winform
 
         private void lblStart_Click(object sender, EventArgs e)
         {
+            WriteLog("Start Btn click");
             //
             AdsStream btnStream = new AdsStream(1);
             AdsBinaryWriter btnWriter = new AdsBinaryWriter(btnStream);
@@ -419,6 +436,7 @@ namespace HMI_Winform
 
         private void lblPause_Click(object sender, EventArgs e)
         {
+            WriteLog("Pause Btn click");
             //using writeany
             try
             {
@@ -435,6 +453,7 @@ namespace HMI_Winform
 
         private void lblStop_Click(object sender, EventArgs e)
         {
+            WriteLog("Stop Btn click");
             lblPause.BackColor = Color.Empty;
             lblStart.BackColor = Color.Empty;
             lblStop.BackColor = Color.Green;
@@ -460,6 +479,11 @@ namespace HMI_Winform
         }
 
         private void lblLamp01UI_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
