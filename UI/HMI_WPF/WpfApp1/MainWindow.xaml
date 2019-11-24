@@ -22,7 +22,7 @@
             <ColumnDefinition Width="65"/>
             <ColumnDefinition Width="65"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="95"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="btnHome" Grid.Row="0" Grid.Column="0" Margin="3" Click="BtnHome_Click">
             <Image Source="/WpfApp1;Component/Images/ico_menu_home.png"/>
@@ -42,11 +42,47 @@
         <Button x:Name="btnStop" Grid.Row="0" Grid.Column="5" Margin="3">
             <Image Source="/WpfApp1;Component/Images/ico_menu_stop.png"/>
         </Button>
-        <StackPanel HorizontalAlignment="Left" Background="LightCoral" Grid.Row="1" Grid.Column="0"
+        <StackPanel HorizontalAlignment="Left"  Grid.Row="1" Grid.Column="0"
                        Grid.ColumnSpan="8" Width="800" Height="500">
-            <ContentControl x:Name="contentControl01" />
+            <Border CornerRadius="10" Background="LightCoral">
+                <ContentControl x:Name="contentControl01" />
+            </Border>
         </StackPanel>
-       
+        <StackPanel Grid.Row="1" Grid.Column="8" VerticalAlignment="Bottom" Background="Beige">
+            <StackPanel.Resources>
+                <!--will have btn style at here later-->
+            </StackPanel.Resources>
+            <TextBlock Text="Machine Mode:" Background="Beige" FontSize="12"/>
+            <Button x:Name="btnAuto" Margin="0,10,0,10">
+                <Grid>
+                    <TextBlock Text="Auto" VerticalAlignment="Center" HorizontalAlignment="Center"
+                               FontFamily="Arial" FontSize="20"/>
+                    <Rectangle Stroke="Black"  StrokeThickness="3" Width="90" Height="45"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btnManual" Margin="2,10,0,10">
+                <Grid>
+                    <TextBlock Text="Manual" VerticalAlignment="Center" HorizontalAlignment="Center"
+                               FontFamily="Arial" FontSize="20"/>
+                    <Rectangle Stroke="Black"  StrokeThickness="3" Width="90" Height="45"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btnCalib" Margin="0,10,0,10">
+                <Grid>
+                    <TextBlock Text="Calib" VerticalAlignment="Center" HorizontalAlignment="Center"
+                               FontFamily="Arial" FontSize="20"/>
+                    <Rectangle Stroke="Black"  StrokeThickness="3" Width="90" Height="45"/>
+                </Grid>
+            </Button>
+            <Button x:Name="btnSetting" Margin="0,10,0,10">
+                <Grid>
+                    <TextBlock Text="Setting" VerticalAlignment="Center" HorizontalAlignment="Center"
+                               FontFamily="Arial" FontSize="20"/>
+                    <Rectangle Stroke="Black"  StrokeThickness="3" Width="90" Height="45"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+        
                
     </Grid>
 </Window>

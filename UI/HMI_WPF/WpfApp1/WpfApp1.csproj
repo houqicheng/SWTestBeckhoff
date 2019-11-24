@@ -139,5 +139,11 @@
     <Resource Include="Images\ico_menu_play.png" />
     <Resource Include="Images\ico_menu_stop.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\software_shape_rectagle_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\rectangle_48px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
