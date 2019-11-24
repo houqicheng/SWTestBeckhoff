@@ -23,6 +23,14 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            Tab_Main tabMain = new Tab_Main();
+            contentControl01.Content = tabMain;
+        }
+
+        private void BtnHome_Click(object sender, RoutedEventArgs e)
+        {
+            Tab_Main tabMain = new Tab_Main();
+            contentControl01.Content = tabMain;
         }
     }
 }

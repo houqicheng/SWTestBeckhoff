@@ -24,7 +24,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="120"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnHome" Grid.Row="0" Grid.Column="0" Margin="3">
+        <Button x:Name="btnHome" Grid.Row="0" Grid.Column="0" Margin="3" Click="BtnHome_Click">
             <Image Source="/WpfApp1;Component/Images/ico_menu_home.png"/>
         </Button>
         <Button x:Name="btnIO" Grid.Row="0" Grid.Column="1" Margin="3">
@@ -42,9 +42,11 @@
         <Button x:Name="btnStop" Grid.Row="0" Grid.Column="5" Margin="3">
             <Image Source="/WpfApp1;Component/Images/ico_menu_stop.png"/>
         </Button>
-        <StackPanel Background="LightBlue" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6">
-            <ContentControl x:Name="contentControl01"/>
+        <StackPanel HorizontalAlignment="Left" Background="LightCoral" Grid.Row="1" Grid.Column="0"
+                       Grid.ColumnSpan="8" Width="800" Height="500">
+            <ContentControl x:Name="contentControl01" />
         </StackPanel>
-        
+       
+               
     </Grid>
 </Window>
