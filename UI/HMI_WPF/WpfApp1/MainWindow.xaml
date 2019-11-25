@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000">
+        Title="MainWindow" Height="600" Width="1000" MaxHeight="600" 
+        MaxWidth="1000" ResizeMode="NoResize" WindowState="Normal">
     <Grid Background="Pink">
         <Grid.RowDefinitions>
             <RowDefinition Height="65"/>
@@ -48,7 +49,7 @@
                 <ContentControl x:Name="contentControl01" />
             </Border>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="8" VerticalAlignment="Bottom" Background="Beige">
+        <StackPanel Grid.Row="1" Grid.Column="8" VerticalAlignment="Bottom" Background="Beige" Button.Click="StackPanel_Click">
             <StackPanel.Resources>
                 <!--will have btn style at here later-->
             </StackPanel.Resources>
