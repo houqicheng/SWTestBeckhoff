@@ -46,6 +46,10 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="TwinCAT.Ads, Version=4.2.165.0, Culture=neutral, PublicKeyToken=180016cd49e5e8c3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\TwinCAT\AdsApi\.NET\v4.0.30319\TwinCAT.Ads.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -55,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdsClient.cs" />
     <Compile Include="Tab_IO.xaml.cs">
       <DependentUpon>Tab_IO.xaml</DependentUpon>
     </Compile>
@@ -66,6 +71,9 @@
     </Compile>
     <Compile Include="Tab_Mode.xaml.cs">
       <DependentUpon>Tab_Mode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tab_SwitchMode.xaml.cs">
+      <DependentUpon>Tab_SwitchMode.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +100,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tab_Mode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tab_SwitchMode.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="WpfApp1.Tab_SwitchMode"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="96" Loaded="UserControl_Loaded">
+    <StackPanel VerticalAlignment="Bottom" Background="Beige" Button.Click="StackPanel_Click">
+        <StackPanel.Resources>
+            <!--will have btn style at here later-->
+        </StackPanel.Resources>
+        <TextBlock Text="Machine Mode:" Background="Beige" FontSize="12"/>
+        <Button x:Name="btnAuto" Margin="0,10,0,10">
+            <Grid>
+                <TextBlock Text="Auto" VerticalAlignment="Center" HorizontalAlignment="Center"
+                               FontFamily="Arial" FontSize="20"/>
+                <Rectangle Stroke="Black"  StrokeThickness="3" Width="90" Height="45"/>
+            </Grid>
+        </Button>
+        <Button x:Name="btnManual" Margin="2,10,0,10">
+            <Grid>
+                <TextBlock Text="Manual" VerticalAlignment="Center" HorizontalAlignment="Center"
+                               FontFamily="Arial" FontSize="20"/>
+                <Rectangle Stroke="Black"  StrokeThickness="3" Width="90" Height="45"/>
+            </Grid>
+        </Button>
+        <Button x:Name="btnCalib" Margin="0,10,0,10">
+            <Grid>
+                <TextBlock Text="Calib" VerticalAlignment="Center" HorizontalAlignment="Center"
+                               FontFamily="Arial" FontSize="20"/>
+                <Rectangle Stroke="Black"  StrokeThickness="3" Width="90" Height="45"/>
+            </Grid>
+        </Button>
+        <Button x:Name="btnSetting" Margin="0,10,0,10">
+            <Grid>
+                <TextBlock Text="Setting" VerticalAlignment="Center" HorizontalAlignment="Center"
+                               FontFamily="Arial" FontSize="20"/>
+                <Rectangle Stroke="Black"  StrokeThickness="3" Width="90" Height="45"/>
+            </Grid>
+        </Button>
+    </StackPanel>
+</UserControl>

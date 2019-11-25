@@ -12,9 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TwinCAT.Ads;
 
 namespace WpfApp1
 {
+    
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -26,22 +28,20 @@ namespace WpfApp1
             Tab_Main tabMain = new Tab_Main();
             contentControl01.Content = tabMain;
         }
-
+        //TcAdsClient client = new TcAdsClient();
+        //AdsClient tcClient = null;
         private void BtnHome_Click(object sender, RoutedEventArgs e)
         {
             Tab_Main tabMain = new Tab_Main();
             contentControl01.Content = tabMain;
         }
+        //private void StackPanel_Click(object sender, RoutedEventArgs e)
+        //{
 
-        private void StackPanel_Click(object sender, RoutedEventArgs e)
+        //}
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            // I try to use this method to hand all four buttons'(Auto,manual,calib and setting) click event.
-            Button btn = (Button)e.OriginalSource;
-            string btnSwitchStr = btn.Name;
-            if (btnSwitchStr.Contains("Auto"))
-            {
-
-            }
+            
         }
     }
 }
